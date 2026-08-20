@@ -65,6 +65,7 @@ const CLAUDE_JOB_QUEUE = [
 ];
 
 const STORAGE_KEY = "eloisa-jobs-v4";
+const LOCAL_UPDATED_KEY = "eloisa-job-tracker-local-updated-at";
 const SYNC_TOKEN_KEY = "eloisa-job-tracker-github-token";
 const SYNC_REPO = "eloisa246/job-tracker";
 const SYNC_PATH = "data/jobs-sync.json";
@@ -80,7 +81,7 @@ const normalizeSync = value => ({
   deletedIds: Array.isArray(value?.deletedIds) ? value.deletedIds : [],
 });
 
-const mergeJobSources = (seed, stored, remote) => {
+const mergeJobSources = (seed, stored, remote, remoteWins=false) => {
   const byId = new Map(seed.map(job => [String(job.id), {...job}]));
   for(const [key,job] of Object.entries(remote.jobs||{})){
     byId.set(key,{...(byId.get(key)||{}),...job});
@@ -106,6 +107,13 @@ const mergeJobSources = (seed, stored, remote) => {
       }
     }
     byId.set(key,{...(byId.get(key)||{}),...job});
+  }
+  // A newer shared snapshot should win once on this device. This repairs stale
+  // browser copies without making bundled code authoritative over later edits.
+  if(remoteWins){
+    for(const [key,job] of Object.entries(remote.jobs||{})){
+      byId.set(key,{...(byId.get(key)||{}),...job});
+    }
   }
   for(const id of remote.deletedIds||[]) byId.delete(String(id));
   return [...byId.values()];
@@ -916,10 +924,16 @@ export default function App() {
       try {
         try{ const r=localStorage.getItem(STORAGE_KEY); if(r) stored=JSON.parse(r); }catch{}
         const remote=await loadRemoteSync();
-        const merged=mergeJobSources(CLAUDE_JOB_QUEUE,stored,remote);
+        let localUpdatedAt="";
+        try{ localUpdatedAt=localStorage.getItem(LOCAL_UPDATED_KEY)||""; }catch{}
+        const remoteTime=remote.updatedAt ? Date.parse(remote.updatedAt) : 0;
+        const localTime=localUpdatedAt ? Date.parse(localUpdatedAt) : 0;
+        const remoteWins=remoteTime>localTime;
+        const merged=mergeJobSources(CLAUDE_JOB_QUEUE,stored,remote,remoteWins);
         setSyncDoc(remote);
         setJobs(merged);
         localStorage.setItem(STORAGE_KEY,JSON.stringify(merged));
+        if(remoteWins && remote.updatedAt) localStorage.setItem(LOCAL_UPDATED_KEY,remote.updatedAt);
         setSyncState("synced");
       } catch(e){
         console.error(e);
@@ -956,7 +970,10 @@ export default function App() {
   };
 
   const persist = async (nextJobs,deletedIds=syncDoc.deletedIds||[]) => {
-    try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(nextJobs)); }catch{}
+    try{
+      localStorage.setItem(STORAGE_KEY,JSON.stringify(nextJobs));
+      localStorage.setItem(LOCAL_UPDATED_KEY,new Date().toISOString());
+    }catch{}
     await pushSnapshot(nextJobs,deletedIds);
   };
 
