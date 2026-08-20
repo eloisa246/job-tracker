@@ -65,6 +65,89 @@ const CLAUDE_JOB_QUEUE = [
 ];
 
 const STORAGE_KEY = "eloisa-jobs-v4";
+const SYNC_TOKEN_KEY = "eloisa-job-tracker-github-token";
+const SYNC_REPO = "eloisa246/job-tracker";
+const SYNC_PATH = "data/jobs-sync.json";
+const SYNC_RAW_URL = `https://raw.githubusercontent.com/${SYNC_REPO}/main/${SYNC_PATH}`;
+const SYNC_API_URL = `https://api.github.com/repos/${SYNC_REPO}/contents/${SYNC_PATH}`;
+
+const emptySync = () => ({ version:1, updatedAt:null, jobs:{}, deletedIds:[] });
+
+const normalizeSync = value => ({
+  version: 1,
+  updatedAt: value?.updatedAt || null,
+  jobs: value?.jobs && typeof value.jobs === "object" ? value.jobs : {},
+  deletedIds: Array.isArray(value?.deletedIds) ? value.deletedIds : [],
+});
+
+const mergeJobSources = (seed, stored, remote) => {
+  const byId = new Map(seed.map(job => [String(job.id), {...job}]));
+  for(const [key,job] of Object.entries(remote.jobs||{})){
+    byId.set(key,{...(byId.get(key)||{}),...job});
+  }
+  // The browser is the user's live source of truth. Code and shared-file
+  // updates may fill missing fields, but they must never reset local edits.
+  for(const job of stored){
+    const key=String(job.id);
+    if(!byId.has(key) && job.title && job.org){
+      const normalize = value => String(value||"")
+        .toLowerCase()
+        .replace(/&/g,"and")
+        .replace(/[^a-z0-9]+/g," ")
+        .trim();
+      const duplicate=[...byId.entries()].find(([,candidate]) =>
+        normalize(candidate.title)===normalize(job.title) &&
+        normalize(candidate.org)===normalize(job.org)
+      );
+      if(duplicate){
+        const [existingKey,existingJob]=duplicate;
+        byId.set(existingKey,{...existingJob,...job,id:existingJob.id});
+        continue;
+      }
+    }
+    byId.set(key,{...(byId.get(key)||{}),...job});
+  }
+  for(const id of remote.deletedIds||[]) byId.delete(String(id));
+  return [...byId.values()];
+};
+
+const loadRemoteSync = async () => {
+  const response = await fetch(`${SYNC_RAW_URL}?t=${Date.now()}`,{cache:"no-store"});
+  if(!response.ok) throw new Error(`Sync read failed (${response.status})`);
+  return normalizeSync(await response.json());
+};
+
+const utf8ToBase64 = text => {
+  const bytes = new TextEncoder().encode(text);
+  let binary="";
+  bytes.forEach(byte=>{ binary+=String.fromCharCode(byte); });
+  return btoa(binary);
+};
+
+const saveRemoteSync = async (document, token) => {
+  const headers={
+    Accept:"application/vnd.github+json",
+    Authorization:`Bearer ${token}`,
+    "X-GitHub-Api-Version":"2022-11-28",
+  };
+  const current=await fetch(SYNC_API_URL,{headers,cache:"no-store"});
+  let sha;
+  if(current.ok) sha=(await current.json()).sha;
+  else if(current.status!==404) throw new Error(`Sync lookup failed (${current.status})`);
+
+  const body={
+    message:"Sync job tracker edits",
+    content:utf8ToBase64(`${JSON.stringify(document,null,2)}\n`),
+    ...(sha?{sha}:{}),
+  };
+  const saved=await fetch(SYNC_API_URL,{
+    method:"PUT",headers:{...headers,"Content-Type":"application/json"},body:JSON.stringify(body),
+  });
+  if(!saved.ok){
+    const detail=await saved.json().catch(()=>({}));
+    throw new Error(detail.message||`Sync save failed (${saved.status})`);
+  }
+};
 const STATUSES = ["Saved","Applied","Interviewing","Offer","Ghosted","Rejected","Withdrawn","Expired"];
 
 const STATUS_CONFIG = {
@@ -824,26 +907,71 @@ export default function App() {
   const [search, setSearch]       = useState("");
   const [sortKey, setSortKey]     = useState("closeDate");
   const [sortDir, setSortDir]     = useState("asc");
+  const [syncDoc, setSyncDoc]     = useState(emptySync());
+  const [syncState, setSyncState] = useState("loading");
 
   useEffect(()=>{
     (async()=>{
+      let stored=[];
       try {
-        let stored=[];
         try{ const r=localStorage.getItem(STORAGE_KEY); if(r) stored=JSON.parse(r); }catch{}
-        if(CLAUDE_JOB_QUEUE.length>0){
-          const ids    = new Set(stored.map(j=>j.id));
-          const fresh  = CLAUDE_JOB_QUEUE.filter(j=>!ids.has(j.id));
-          const updated= stored.map(j=>{ const u=CLAUDE_JOB_QUEUE.find(q=>q.id===j.id); return u?{...j,...u}:j; });
-          const merged = [...fresh,...updated];
-          setJobs(merged);
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-        } else { setJobs(stored); }
-      } catch(e){ console.error(e); }
+        const remote=await loadRemoteSync();
+        const merged=mergeJobSources(CLAUDE_JOB_QUEUE,stored,remote);
+        setSyncDoc(remote);
+        setJobs(merged);
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(merged));
+        setSyncState("synced");
+      } catch(e){
+        console.error(e);
+        const merged=mergeJobSources(CLAUDE_JOB_QUEUE,stored,emptySync());
+        setJobs(merged);
+        try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(merged)); }catch{}
+        setSyncState("offline");
+      }
       setLoading(false);
     })();
   },[]);
 
-  const persist = async u => { try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(u)); }catch{} };
+  const pushSnapshot = async (nextJobs,deletedIds=syncDoc.deletedIds||[]) => {
+    let token="";
+    try{ token=localStorage.getItem(SYNC_TOKEN_KEY)||""; }catch{}
+    if(!token){ setSyncState("setup"); return false; }
+    const document={
+      version:1,
+      updatedAt:new Date().toISOString(),
+      jobs:Object.fromEntries(nextJobs.map(job=>[String(job.id),job])),
+      deletedIds:[...new Set(deletedIds.map(String))],
+    };
+    setSyncState("saving");
+    try{
+      await saveRemoteSync(document,token);
+      setSyncDoc(document);
+      setSyncState("synced");
+      return true;
+    }catch(error){
+      console.error(error);
+      setSyncState("error");
+      return false;
+    }
+  };
+
+  const persist = async (nextJobs,deletedIds=syncDoc.deletedIds||[]) => {
+    try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(nextJobs)); }catch{}
+    await pushSnapshot(nextJobs,deletedIds);
+  };
+
+  const syncNow = async () => {
+    let token="";
+    try{ token=localStorage.getItem(SYNC_TOKEN_KEY)||""; }catch{}
+    if(!token){
+      token=window.prompt(
+        "Paste a fine-grained GitHub token with Contents read/write access only to eloisa246/job-tracker. It stays in this browser and is never added to the tracker data."
+      )||"";
+      if(!token) return;
+      try{ localStorage.setItem(SYNC_TOKEN_KEY,token.trim()); }catch{}
+    }
+    await pushSnapshot(jobs);
+  };
 
   const handleSave = async form => {
     let u;
@@ -854,7 +982,8 @@ export default function App() {
 
   const handleDelete = async id => {
     const u=jobs.filter(j=>j.id!==id);
-    setJobs(u); await persist(u); setEditModal(null); setSheet(null);
+    const deleted=[...new Set([...(syncDoc.deletedIds||[]).map(String),String(id)])];
+    setJobs(u); await persist(u,deleted); setEditModal(null); setSheet(null);
   };
 
   const handleSort = key => {
@@ -883,6 +1012,15 @@ export default function App() {
     return ms && (!q || [j.title,j.org,j.location].some(f=>(f||"").toLowerCase().includes(q)));
   }));
 
+  const syncLabel={
+    loading:"Checking sync",
+    synced:"Synced",
+    saving:"Saving",
+    setup:"Set up sync",
+    offline:"Offline",
+    error:"Sync error",
+  }[syncState]||"Sync";
+
   return (
     <div style={{minHeight:"100vh",background:"#070d1a",fontFamily:"'DM Sans','Helvetica Neue',sans-serif",color:"#e2e8f0",maxWidth:600,margin:"0 auto",paddingBottom:48}}>
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,800&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@500;600&display=swap" rel="stylesheet"/>
@@ -903,13 +1041,23 @@ export default function App() {
               {jobs.length} tracked · <span style={{color:"#4B9EFF"}}>{activeCount} active</span>
             </p>
           </div>
-          <button onClick={()=>setEditModal({...EMPTY})} style={{
-            background:"linear-gradient(135deg,#1a4a8a,#2a6aaa)",
-            border:"1px solid rgba(75,158,255,0.3)",color:"#93c5fd",borderRadius:12,
-            padding:"10px 18px",cursor:"pointer",fontSize:13,fontWeight:700,
-            display:"flex",alignItems:"center",gap:6,boxShadow:"0 4px 16px rgba(75,158,255,0.15)"}}>
-            <span style={{fontSize:16,lineHeight:1}}>＋</span> Add
-          </button>
+          <div style={{display:"flex",gap:7,alignItems:"center"}}>
+            <button onClick={syncNow} title="Save this browser's tracker edits to GitHub" style={{
+              background:syncState==="synced"?"rgba(54,201,167,0.10)":"rgba(255,255,255,0.05)",
+              border:`1px solid ${syncState==="synced"?"rgba(54,201,167,0.28)":"rgba(255,255,255,0.10)"}`,
+              color:syncState==="synced"?"#36C9A7":syncState==="error"?"#FF7B72":"#94a3b8",
+              borderRadius:12,padding:"10px 12px",cursor:"pointer",fontSize:11,fontWeight:700,
+              whiteSpace:"nowrap"}}>
+              ☁ {syncLabel}
+            </button>
+            <button onClick={()=>setEditModal({...EMPTY})} style={{
+              background:"linear-gradient(135deg,#1a4a8a,#2a6aaa)",
+              border:"1px solid rgba(75,158,255,0.3)",color:"#93c5fd",borderRadius:12,
+              padding:"10px 18px",cursor:"pointer",fontSize:13,fontWeight:700,
+              display:"flex",alignItems:"center",gap:6,boxShadow:"0 4px 16px rgba(75,158,255,0.15)"}}>
+              <span style={{fontSize:16,lineHeight:1}}>＋</span> Add
+            </button>
+          </div>
         </div>
 
         <div style={{display:"flex",gap:6,overflowX:"auto",scrollbarWidth:"none",WebkitOverflowScrolling:"touch",paddingBottom:2}}>
