@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-20T22:30:00.000Z",
+  "jobs": {
+    "1700000039000": {
+      "id": 1700000039000,
+      "status": "Applied",
+      "appliedDate": "2026-08-14"
+    },
+    "1700000021000": {
+      "id": 1700000021000,
+      "status": "Applied",
+      "appliedDate": "2026-07-02"
+    },
+    "1700000024000": {
+      "id": 1700000024000,
+      "status": "Applied",
+      "appliedDate": "2026-07-02"
+    },
+    "1700000047000": {
+      "id": 1700000047000,
+      "status": "Applied",
+      "appliedDate": "2026-08-14"
+    },
+    "1700000048000": {
+      "id": 1700000048000,
+      "status": "Rejected",
+      "appliedDate": "2026-08-15"
+    },
+    "1700000050000": {
+      "id": 1700000050000,
+      "status": "Applied",
+      "appliedDate": "2026-08-14"
+    },
+    "1700000057000": {
+      "id": 1700000057000,
+      "status": "Applied",
+      "appliedDate": "2026-08-15"
+    },
+    "1700000064000": {
+      "id": 1700000064000,
+      "status": "Applied",
+      "appliedDate": "2026-08-15"
+    },
+    "1700000065000": {
+      "id": 1700000065000,
+      "status": "Applied",
+      "appliedDate": "2026-08-15"
+    },
+    "1700000032000": {
+      "id": 1700000032000,
+      "status": "Applied",
+      "appliedDate": "2026-08-20"
+    },
+    "1700000036000": {
+      "id": 1700000036000,
+      "status": "Applied",
+      "appliedDate": "2026-08-20"
+    },
+    "1700000052000": {
+      "id": 1700000052000,
+      "status": "Applied",
+      "appliedDate": "2026-08-20"
+    },
+    "1700000037000": {
+      "id": 1700000037000,
+      "status": "Applied",
+      "appliedDate": "2026-08-20"
+    },
+    "1700000004000": {
+      "id": 1700000004000,
+      "status": "Rejected",
+      "appliedDate": "2026-01-20"
+    },
+    "1700000067000": {
+      "id": 1700000067000,
+      "title": "Financial Inclusion & Family Empowerment Coordinator",
+      "org": "Harlem Children's Zone",
+      "location": "New York, NY",
+      "salary": "",
+      "postedDate": "",
+      "appliedDate": "2026-06-05",
+      "status": "Applied",
+      "linkType": "unverified",
+      "deadlineType": "not_published",
+      "url": "",
+      "closeDate": "",
+      "requirements": "Bachelor's degree; experience empowering families toward measurable outcomes; nonprofit project management or financial literacy experience.",
+      "notes": "Application submitted successfully on June 5, 2026.",
+      "tuitionNote": "",
+      "scores": null,
+      "scoreRationale": null
+    }
+  },
+  "deletedIds": []
+}
