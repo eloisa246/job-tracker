@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-06T00:29:08.000Z",
+  "updatedAt": "2026-09-15T02:07:15.453Z",
   "jobs": {
     "1700000039000": {
       "id": 1700000039000,
@@ -107,7 +107,14 @@
       "requirements": "NYC Votes non-partisan voter engagement outreach. Civil service title ANALYST CFB AL 2&3 - 0660A.\n\nMinimum qualifications:\n1. A bachelor's degree including or supplemented by at least twelve semester credits in accounting, auditing, business or public administration, computer science, economics, finance, statistics, graphic design, personnel or human resources administration, user experience design, or a closely related area of study, AND one year of satisfactory full-time experience in one of those fields; or\n2. A four-year high school diploma or equivalent and five years of experience as described in \"1\"; or\n3. Education and/or experience equivalent to \"1\".\n\nAlso listed: ability to move and carry objects up to 20 pounds over 50–100 m between stops; ability to break down complex civics topics for an audience; event planning and program execution including logistics and resource distribution.\nPreferred: elections/voting work in NYC; leading large-scale public engagement campaigns; voter targeting; proficiency in one or more NYC Votes covered languages.\nNYC residency required within 90 days.",
       "notes": "Found on Handshake (CUNY SPH board) 8/27/26. BLOCKER TO RESOLVE: the twelve-credit requirement in accounting/business or public admin/CS/economics/finance/statistics/graphic design/HR/UX is not obviously satisfied by a BS in Biology with a Film Studies minor. Applying means going through route 2 or 3 and arguing five years of program and business administration as equivalent — check the transcript for statistics or business credits before writing. Handshake's matcher says 'you do not match any qualifications,' which reflects its major filter, not this requirement text. Cover letter goes in the attachment or 'Message to the Hiring Team' field on SmartRecruiters.",
       "tuitionNote": "",
-      "scores": { "qualification": 5, "enjoyment": 4, "school": 7, "location": 7, "mph": 4, "mission": 8 },
+      "scores": {
+        "qualification": 5,
+        "enjoyment": 4,
+        "school": 7,
+        "location": 7,
+        "mph": 4,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "The twelve-credit coursework gate is not clearly met by a biology degree, so this depends entirely on the experience or equivalency route being accepted.",
         "enjoyment": "Field-heavy: tabling, carrying materials between stops, live civics presentations, and event logistics — the public-facing end of the spectrum she consistently scores down.",
@@ -124,8 +131,8 @@
       "location": "New York, NY — hybrid or onsite (WORKSITE UNVERIFIED: Montefiore Bronx vs. FDNY WTC program offices in Brooklyn)",
       "salary": "$70,000–$102,000",
       "postedDate": "",
-      "appliedDate": "",
-      "status": "Saved",
+      "appliedDate": "2026-09-10",
+      "status": "Applied",
       "linkType": "aggregator",
       "deadlineType": "date",
       "url": "https://app.joinhandshake.com/jobs/11315148",
@@ -133,7 +140,14 @@
       "requirements": "Coordinate data linkages between the WTC Health Program and state cancer registries, death registries, and other sources; maintain IRB materials and data use agreements across 15+ studies (protocols, continuing review progress reports, amendments); assist with sub-study recruitment and enrollment, grant submissions, and research team meeting coordination. Monitors the health of 14,000+ firefighters and EMS personnel post-9/11.\n\nRequired skills:\n- Excellent problem solving, analytical, writing and communication skills\n- Experience using Excel and related tools\n- Ability to work in a team and independently\n- Ability to multitask across several projects\n- Master's degree in public health OR bachelor's degree with two or more years of work experience in an academic or public health/research setting\n- Experience with grant writing and/or peer reviewed publications",
       "notes": "Found on Handshake (CUNY SPH board) 8/27/26. Best full-time role in the Handshake batch. Two soft gaps to address in the cover letter rather than ignore: (1) the experience route specifies an academic or public health/research setting, and her five years are in housing and social services nonprofits; (2) grant writing and/or peer reviewed publications is listed as a required skill — the Grantsmanship Center certificate and grant compliance work cover the grant side, there are no publications. The bachelor's-plus-experience route means the in-progress MPH is not a blocker. VERIFY WORKSITE BEFORE APPLYING — the FDNY WTC Health Program operates out of Brooklyn while Montefiore is Bronx-based, and that is the difference between a 25-minute and a 60-minute commute.",
       "tuitionNote": "",
-      "scores": { "qualification": 5, "enjoyment": 8, "school": 6, "location": 5, "mph": 9, "mission": 9 },
+      "scores": {
+        "qualification": 5,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 5,
+        "mph": 9,
+        "mission": 9
+      },
       "scoreRationale": {
         "qualification": "Clears the degree-plus-experience route on paper, but the posting asks for a research setting she has not worked in and for publications she does not have.",
         "enjoyment": "Documentation, data use agreements, registry coordination, and meeting logistics with no caseload and no supervisory duty is close to the exact shape of work she wants.",
@@ -159,7 +173,14 @@
       "requirements": "Part-time Research Foundation administrative assistant supporting a fast-paced office.\n\nMinimum qualifications:\n- Must be a currently enrolled CUNY student (undergraduate or graduate)\n- Ability to work 15–19 hours per week\n- Experience and proficiency with Microsoft Office Suite (Excel, Word, PowerPoint, Outlook, Teams)\n- Strong online research skills; strong writing skills\n- Ability to work independently and as part of a team\n- Customer-focused communication with diverse internal and external constituencies\n- Previous administrative or office experience\n\nPreferred: managing assignments from multiple supervisors; strong organization and attention to detail; creative problem solving; professionalism and comfort in a hybrid environment; research-driven copywriting such as annual reports or fund reporting. Work samples may be requested at interview.",
       "notes": "Found on Handshake (CUNY SPH board) 8/27/26. Highest-probability application in the batch — the pool is restricted to currently enrolled CUNY students, which she is as of Fall 2026. Apply by email to michael.rothman@cuny.edu with resume, cover letter, and three professional or academic references. REFERENCES REQUIRE APPLICANT REVIEW before anything is sent.",
       "tuitionNote": "RF part-time position — CUNY tuition waiver eligibility is unverified for Research Foundation part-time staff and should not be assumed.",
-      "scores": { "qualification": 9, "enjoyment": 8, "school": 9, "location": 8, "mph": 5, "mission": 7 },
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 8,
+        "school": 9,
+        "location": 8,
+        "mph": 5,
+        "mission": 7
+      },
       "scoreRationale": {
         "qualification": "Exceeds every listed requirement — administrative support, records, research, and advanced Office are the core of her last five years, and the CUNY enrollment gate works in her favor rather than against her.",
         "enjoyment": "Purely administrative and research support with no caseload, no participants, and no supervisory duty.",
@@ -185,7 +206,14 @@
       "requirements": "Reports to Senior Associate, Policy and Advocacy.\n\nQualifications:\n- Bachelor's degree or equivalent experience; currently enrolled in a graduate program in a relevant area such as public policy, social work, public administration, urban planning, or public health\n- Excellent writing, organizational, and analytical skills\n- Strong project management skills including the ability to work independently\n- Some knowledge of aging or anti-hunger policy a plus\n- Participatory action research and/or survey, focus group, or interview experience a big plus\n- Comfort with research tools and databases such as LexisNexis, Westlaw, and legislative/regulatory databases\n- Quantitative and qualitative analysis including public survey data such as ACS or CPS",
       "notes": "Found on Handshake (CUNY SPH board) 8/27/26. Handshake matcher says 'you match all qualifications.' Apply by email to careers@citymeals.org with resume and cover letter, subject line 'Policy and Advocacy Intern.' 20 hrs/week at $20/hr — practicum-shaped rather than income-replacing; the bigger question is whether 20 hours clears alongside coursework.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 8, "school": 7, "location": 8, "mph": 9, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 8,
+        "school": 7,
+        "location": 8,
+        "mph": 9,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Meets the degree and graduate enrollment gate outright; writing, project management, and independent work are documented strengths, with ACS/CPS analysis the main soft spot.",
         "enjoyment": "Policy research and writing with no caseload and no supervisory duty is close to ideal for her stated preferences.",
@@ -211,7 +239,14 @@
       "requirements": "Graduate-level student pursuing a degree in public health, health policy, or a related field. Strong commitment to NYHealth's mission; excellent writing, research, communication, and database management skills; ability to multitask and to work both cooperatively and autonomously under tight deadlines. Experience in public health and health policy preferred.",
       "notes": "Found on Handshake (CUNY SPH board) 8/27/26. DEADLINE CONFLICT — the posting body says the submission deadline is August 28, 2026 while Handshake shows September 23, 2026. closeDate is set to the earlier employer-stated date; treat 8/28 as real. Apply by email to internships@nyhealthfoundation.org with 'Special Projects Fund Intern' in the subject line. Nine-month commitment through June 2027, part-time at $20/hr.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 8, "school": 7, "location": 8, "mph": 9, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 8,
+        "school": 7,
+        "location": 8,
+        "mph": 9,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Graduate enrollment in health policy is the gate and she clears it; writing, research, and database management are all documented.",
         "enjoyment": "Health philanthropy research and writing, desk-based, with exposure to grantmaking decisions.",
@@ -237,7 +272,14 @@
       "requirements": "Co-facilitate two-hour governance lab sessions with small groups of community members at CUNY SPH in Harlem for Locally Informed Futures for Health Equity (LIFHE), a two-year project developing a community-centered governance framework for health AI, run in partnership with the Harlem Health Initiative at CUNY SPH. Two openings.\n\nQualifications — applicants should:\n- Be an alum or graduate student at CUNY SPH in good academic standing\n- Have experience facilitating groups, workshops, or community meetings, and be comfortable facilitating discussion among people with different perspectives\n- Be available for sessions at CUNY SPH in Harlem on Wednesday afternoons and early evenings\n- Demonstrate clear, plain-language writing skills\n- Have an interest in health equity, community engagement or participatory research, and governance of digital health technologies and AI (technical AI background NOT required)\n- Have strong organizational skills and comfort managing multiple moving pieces\n- Be able to complete CITI human subjects research training before session-based activities\n\nCoursework in community engagement, participatory research, qualitative analysis, or project management is welcome but not required.\n\nResponsibilities: co-facilitate alongside a project team member using a prepared guide; team prep meetings and independent review of facilitation guides; team debriefs plus written debriefs; session logistics, materials, room setup, participant welcome; structured session summaries and handoff of drafted governance language. Project coordination: session scheduling and participant confirmations across three participant groups, timeline and action-item tracking, project management and audit-trail systems, recruitment support with the Harlem Health Initiative and CBO partners.",
       "notes": "Found on Handshake (CUNY SPH board) 8/27/26. TOP-RATED of the Handshake batch — best hours-to-value ratio in the pipeline.\n\nEFFECTIVE HOURLY: $56-100/hr, midpoint ~$73/hr. The 5-6 hrs/week figure applies to weeks that HAVE a session, not every week of the semester — the posting says to expect heavier weeks around sessions and lighter weeks between, and ~5 hrs of intern time per session matches. So 4-6 sessions at 5-6 hrs = 20-36 hrs total for the semester ($100/hr at 20 hrs, $55.56/hr at 36 hrs), averaging about 2 hrs/week across Sept 1-Dec 18. This is 2.5-3.4x the CUNY K-16 rate of $29.32 and the highest effective rate in the pipeline. Worth confirming expected total hours at interview, but the reading is well supported by the posting. Watch for scope creep from the open-ended coordination duties (scheduling across three participant groups, timeline tracking, audit-trail systems, recruitment support) pushing actual hours past the session-based estimate.\n\nSCHEDULE CONFIRMED CLEAR: fall classes meet Tuesday and Thursday late afternoons, in person at CUNY SPH — the same building as the sessions. Wednesday afternoons and early evenings do not conflict. Note one course has weekly assignments due Wednesday nights, so session days double as submission days. Onsite ~3 hrs per session, everything else remote.\n\nAPPLY TO info@healthjustice.co with resume and cover letter. The cover letter MUST describe a group, workshop, or meeting she has facilitated and what she learned — her closest evidence is partner office hours, training/TA delivery at United Way, and 15+ community intake events. DO NOT send a writing sample initially; candidates invited to interview provide up to two pages written for a general or community audience, not academic. Applications reviewed on a rolling basis with interviews beginning immediately, so the real deadline is earlier than the 8/31/26 Handshake cutoff in closeDate.\n\nSTACKABLE: at roughly 2 hrs/week averaged across the semester this is additive, not a substitute — applicant's own read is that it is reasonable to hold alongside a part-time or even a full-time job. Do NOT treat it as competing with the full-time search; it should run in parallel with whatever lands. This is the only Handshake find in the batch that stacks; Citymeals (20 hrs/wk), Oaklin Lane (25 hrs/wk), NYHF (9-month part-time), and CUNY K-16 (19 hrs/wk) all require a job-sized opening in the schedule.\n\nUPSIDE: continuing into Spring 2027 may include community-based qualitative analysis, codebook development, coding, and contributing to peer-reviewed papers and policy briefs. Health Justice was founded by Dr. Oni Blackstock.",
       "tuitionNote": "",
-      "scores": { "qualification": 7, "enjoyment": 8, "school": 10, "location": 9, "mph": 8, "mission": 9 },
+      "scores": {
+        "qualification": 7,
+        "enjoyment": 8,
+        "school": 10,
+        "location": 9,
+        "mph": 8,
+        "mission": 9
+      },
       "scoreRationale": {
         "qualification": "Clears the hard gate outright — CUNY SPH graduate student — and the pool is restricted to CUNY SPH people, which narrows the field sharply. Facilitation experience is the listed soft spot; office hours, trainings, and community intake events are defensible but she needs one specific story for the cover letter.",
         "enjoyment": "Participant-facing, which normally scores down, but it is co-facilitated from a prepared guide alongside a project team member, and the hours-to-stipend ratio makes it worth it on her own assessment.",
@@ -263,7 +305,14 @@
       "requirements": "Policy research for an industry association of pediatric therapy companies, clinicians, parents, and researchers. Projects may include federal and state policy affecting access to pediatric therapy; Medicaid, commercial insurance, reimbursement and coverage policy; workforce shortages and licensing barriers; access, wait time, and disparity comparisons across states; early intervention and school-based therapy; legislative and regulatory analysis; policy briefs, issue summaries, and educational materials; presenting findings to leadership.\n\nWho should apply: undergraduate and graduate students from all academic backgrounds, including public health, public policy, health policy, healthcare administration, political science, economics, social work, sociology, psychology or child development, education, law, speech-language pathology, and occupational or physical therapy. Prior healthcare policy or public health experience noted as helpful. US work authorization not required.",
       "notes": "Found on Handshake (CUNY SPH board) 8/27/26. BLOCKER — VERIFY EMPLOYER BEFORE APPLYING: the Handshake employer is listed as 'Oaklin Lane' while the posting describes 'The Pediatric Collective,' and that mismatch is unresolved. Confirm the organization is real and that the two names are connected before sending materials. Note also that an industry association advocates on behalf of its member companies, so this is trade-association policy work rather than public-interest policy. Fully remote at roughly 25 hrs/week.",
       "tuitionNote": "",
-      "scores": { "qualification": 7, "enjoyment": 8, "school": 8, "location": 9, "mph": 8, "mission": 6 },
+      "scores": {
+        "qualification": 7,
+        "enjoyment": 8,
+        "school": 8,
+        "location": 9,
+        "mph": 8,
+        "mission": 6
+      },
       "scoreRationale": {
         "qualification": "Open to graduate students from all academic backgrounds, so there is no credential gap; policy research and writing are strengths, though pediatric therapy and Medicaid reimbursement are unfamiliar subject matter.",
         "enjoyment": "Owned research projects and brief-writing with no caseload matches her preferences well.",
@@ -289,7 +338,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 790474. Unit: Domestic Violence-NM.\n\nMinimum qualifications:\n1. A baccalaureate degree from an accredited college and two years of experience in community work or community centered activities in an area related to the duties described above; or\n2. High school graduation or equivalent and six years of such experience; or\n3. Education and/or experience equivalent to \"1\" or \"2\". All candidates must have at least one year of experience as described in \"1\".",
       "notes": "Found in the 8/28/26 sweep of NYC Jobs open data (942 external postings since Aug 1). QUALIFICATION CONFIRMED against the civil service minimum: BS plus five years of community-centered program work clears the baccalaureate-plus-two route with room to spare. Emergency Food Assistance Program work is the closest thing in the city pipeline to her AmeriCorps USDA meal site and food access history.",
       "tuitionNote": "",
-      "scores": { "qualification": 9, "enjoyment": 7, "school": 6, "location": 8, "mph": 8, "mission": 9 },
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 7,
+        "school": 6,
+        "location": 8,
+        "mph": 8,
+        "mission": 9
+      },
       "scoreRationale": {
         "qualification": "Clears the Community Coordinator minimum outright, and emergency food assistance is a domain she has actually worked in rather than one she would be learning.",
         "enjoyment": "Coordinating a pantry and provider network is program operations work, though it carries more provider-facing contact than a pure desk role.",
@@ -315,7 +371,14 @@
       "requirements": "Civil service title: PROGRAM OFFICER (DEPT FOR THE AGING). Job ID 785744. Unit: Older Adult Centers.\n\nMinimum qualifications:\n1. A baccalaureate degree and three years of full-time satisfactory professional experience in social services, community relations, public administration or management, contract management, or social research and/or planning; or\n2. Equivalent education and/or experience, with experience substitutable for education year for year. All candidates must have one year of experience as described in \"1\" and a four-year high school diploma or equivalent.",
       "notes": "Found in the 8/28/26 sweep of NYC Jobs open data. QUALIFICATION CONFIRMED: the required three years in social services, contract management, or public administration is covered several times over. Monitoring a network of contracted older adult centers is structurally the same work as her United Way role overseeing six community-based organizations and 45 case managers. Same building as the DYCD Operations Analyst she applied to in July.",
       "tuitionNote": "",
-      "scores": { "qualification": 9, "enjoyment": 8, "school": 6, "location": 8, "mph": 7, "mission": 8 },
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 8,
+        "mph": 7,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Exceeds the three-year requirement and the listed experience areas read like a description of her United Way partnerships role.",
         "enjoyment": "Contract and program monitoring across a provider network, with reporting and site visits, is close to the work she has said she wants.",
@@ -341,7 +404,14 @@
       "requirements": "Civil service title: MAYORAL PROGRAM COORDINATOR. Job ID 773463. Unit: NYC SERVICE.\n\nMinimum qualifications:\n1. A baccalaureate degree and two years of experience in administration, research, management, analytical work, community work or community activities; or\n2. A four-year high school diploma and six years of such experience; or\n3. A satisfactory equivalent combination. All candidates must have at least one year of the described experience.\n\nPreferred: bilingual ability; Salesforce experience; AMERICORPS ALUMNUS IS EXPLICITLY LISTED AS A STRONG PLUS; background in training, curriculum development, or event management.",
       "notes": "Found in the 8/28/26 sweep of NYC Jobs open data. The posting names AmeriCorps alumni as a strong plus, and she served AmeriCorps/HungerCorps VISTA 2020-2021 - this is the rare posting where her service history is a stated hiring preference rather than background colour. NYC Service administers the city's AmeriCorps portfolio, so it is also the natural bridge if she wants to re-enter national service work on the administrative side. Salary is a flat $64,000, below her recent band. 253 Broadway is the same building as the MOPT role.",
       "tuitionNote": "",
-      "scores": { "qualification": 9, "enjoyment": 7, "school": 6, "location": 8, "mph": 5, "mission": 9 },
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 7,
+        "school": 6,
+        "location": 8,
+        "mph": 5,
+        "mission": 9
+      },
       "scoreRationale": {
         "qualification": "Exceeds the baccalaureate-plus-two minimum, and her AmeriCorps service matches a named preferred qualification. Salesforce is in her data systems list.",
         "enjoyment": "Program coordination, training, and event management suit her, though volunteer-facing work is more outward than a pure administrative post.",
@@ -367,7 +437,14 @@
       "requirements": "Civil service title: ASSOCIATE STAFF ANALYST. Job ID 737119. Unit: DYFJ Central.\n\nMinimum qualifications (route 2 is the relevant one):\n1. A master's degree in economics, finance, accounting, business or public administration, public health, human resources management, statistics, political science, urban studies, or a JD, plus one year of professional experience in budget administration, fiscal management, program evaluation, social services program planning/evaluation, or a related area; or\n2. A BACCALAUREATE DEGREE AND THREE YEARS of satisfactory full-time professional experience in the areas described in \"1\"; or\n3. An associate degree plus five years of such experience; or\n4. High school diploma plus seven years; or\n5. An equivalent combination, with 30 semester credits substitutable for one year of experience.",
       "notes": "Found in the 8/28/26 sweep of NYC Jobs open data. Highest-paying qualified role in the sweep. QUALIFICATION CONFIRMED via route 2: baccalaureate plus three years in social services program planning/evaluation or fiscal management, which her five years cover. Do NOT be put off by the master's degree in route 1 - the bachelor's route is explicitly available, which is exactly the distinction that disqualified the DOHMH City Research Scientist postings where no such route exists. Contract analysis for youth and family justice providers is adjacent to the contract management roles she has already targeted at PHS and HPD.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 8, "school": 6, "location": 8, "mph": 5, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 8,
+        "mph": 5,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Meets the bachelor's-plus-three-years route with contract, fiscal, and program evaluation experience, though she has not held a titled contract analyst role before.",
         "enjoyment": "Contract review, budget analysis, and provider oversight with no caseload and no supervisory duty.",
@@ -385,7 +462,7 @@
       "salary": "$62,868-$75,000",
       "postedDate": "2026-08-27",
       "appliedDate": "",
-      "status": "Saved",
+      "status": "Applied",
       "linkType": "direct_employer",
       "deadlineType": "date",
       "url": "https://cityjobs.nyc.gov/job/emergency-preparedness-coordinator-in-nyc-all-boros-jid-44212",
@@ -393,7 +470,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 782540. Unit: ENS Executive Office.\n\nMinimum qualifications:\n1. A baccalaureate degree and two years of experience in community work or community centered activities related to the duties; or\n2. High school graduation and six years of such experience; or\n3. Equivalent education and/or experience. All candidates must have at least one year of experience as described in \"1\".",
       "notes": "Found in the 8/28/26 sweep of NYC Jobs open data. CLOSES 9/6/26 - the tightest deadline of the sweep. QUALIFICATION CONFIRMED against the Community Coordinator minimum. Emergency preparedness maps to her COVID-era emergency response work: USDA emergency meal sites, a $15M emergency rental assistance rollout, and 15+ large-scale intake events under time pressure. Third HPD posting she has tracked and the same building as the Owner Services Project Manager application from 8/20.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 7, "school": 6, "location": 8, "mph": 6, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 7,
+        "school": 6,
+        "location": 8,
+        "mph": 6,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Clears the Community Coordinator minimum, and emergency response is genuine experience for her, though she has not held a preparedness-titled role.",
         "enjoyment": "Planning, drills, and coordination are operations work, but emergency roles carry on-call and field expectations that a pure desk role would not.",
@@ -419,7 +503,14 @@
       "requirements": "Requisition 615190, job class Management, full-time.\n\nQualifications and experience:\n- Bachelor's degree required; master's degree preferred. Equivalent experience may be considered in lieu of the degree requirement.\n- MINIMUM OF 4 YEARS OF MANAGEMENT EXPERIENCE.\n- Responsibilities include ensuring required proposal materials are completed and submitted for review on time.",
       "notes": "Found in the 8/28/26 sweep of the PHS ADP board (20 open postings). QUALIFICATION CONFIRMED by the applicant: the four-year management requirement is met, running continuously from Team Lead at United Way (Aug 2022) through Partnerships Coordinator to Program Supervisor at Brilliant Corners (Jul 2026). PREFERENCE CAVEAT, not a qualification one: the role is classified internally as Management and carries staff oversight, which she has consistently said she does not want. Kept high in the pipeline because nutrition access is her strongest subject-matter match anywhere in the sweep and the salary is at the top of her range. Sixth PHS role tracked.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 5, "school": 6, "location": 7, "mph": 8, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 5,
+        "school": 6,
+        "location": 7,
+        "mph": 8,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Meets both bars: bachelor's degree, and four continuous years of management from team lead through program supervisor. Master's is preferred and hers is in progress.",
         "enjoyment": "A management-classified role with staff oversight, which is the shape of work she has repeatedly scored down.",
@@ -445,7 +536,14 @@
       "requirements": "Civil service title: PRINCIPAL ADMINISTRATIVE ASSOCIATE. Job ID 790828.\n\nMinimum qualifications: A baccalaureate degree and three years of satisfactory full-time progressively responsible clerical/administrative experience, one year of which must have been in an administrative capacity or supervising staff performing clerical/administrative work of more than moderate difficulty; or an equivalent combination.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED: baccalaureate plus three years of progressively responsible administrative work, with the administrative-capacity year covered several times over. Highest-scoring role in this batch - food insecurity is the subject she has the deepest history in, and the title is administrative rather than participant-facing. Same building as the EFAP Coordinator role.",
       "tuitionNote": "",
-      "scores": { "qualification": 9, "enjoyment": 8, "school": 6, "location": 8, "mph": 8, "mission": 9 },
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 8,
+        "mph": 8,
+        "mission": 9
+      },
       "scoreRationale": {
         "qualification": "Clears the Principal Administrative Associate minimum comfortably, and food assistance administration is work she has actually done.",
         "enjoyment": "An administrative title on a food assistance team: records, processing, and coordination rather than casework.",
@@ -471,7 +569,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 765549.\n\nMinimum qualifications: A baccalaureate degree and two years of experience in community work or community centered activities related to the duties; or high school graduation and six years of such experience; or an equivalent combination. All candidates need at least one year of the described experience.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED against the Community Coordinator minimum. Second DFTA role tracked alongside Program Officer I, same building, and a lighter alternative if the Program Officer contract-monitoring role goes elsewhere.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 7, "school": 6, "location": 8, "mph": 7, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 7,
+        "school": 6,
+        "location": 8,
+        "mph": 7,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Meets the Community Coordinator minimum; aging services are new subject matter but the community program work transfers.",
         "enjoyment": "Program coordination for older adult services, with more direct community contact than a pure back-office role.",
@@ -497,7 +602,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 789605.\n\nMinimum qualifications: A baccalaureate degree and two years of experience in community work or community centered activities related to the duties; or high school graduation and six years of such experience; or an equivalent combination.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED. Widest salary band of the batch at up to $94,521, and a Community Coordinator title rather than one of the master's-gated analyst ladders. Second mayoral office role tracked alongside the NYC Service coordinator post.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 8, "school": 6, "location": 8, "mph": 5, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 8,
+        "mph": 5,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Clears the Community Coordinator minimum, and project management across city programs is the throughline of her last five years.",
         "enjoyment": "Program project management with no caseload; the shape of work she has consistently rated highest.",
@@ -515,7 +627,7 @@
       "salary": "$62,868-$87,500",
       "postedDate": "2026-08-31",
       "appliedDate": "",
-      "status": "Saved",
+      "status": "Applied",
       "linkType": "direct_employer",
       "deadlineType": "date",
       "url": "https://cityjobs.nyc.gov/job/senior-project-manager-small-homes-stabilization-in-nyc-all-boros-jid-47060",
@@ -523,7 +635,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 796704.\n\nMinimum qualifications: A baccalaureate degree and two years of experience in community work or community centered activities related to the duties; or high school graduation and six years of such experience; or an equivalent combination.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED. Despite the Senior title this is a Community Coordinator line, the same civil service title as the HPD Owner Services role she applied to on 8/20, so the seniority label does not raise the bar. Fourth HPD posting tracked, same building.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 8, "school": 6, "location": 8, "mph": 5, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 8,
+        "mph": 5,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Same civil service title and minimum as the HPD role she already applied to, so eligibility is established.",
         "enjoyment": "Housing preservation project management, desk-based, no caseload.",
@@ -549,7 +668,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 779643.\n\nMinimum qualifications: A baccalaureate degree and two years of experience in community work or community centered activities related to the duties; or high school graduation and six years of such experience; or an equivalent combination.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED. CLOSES 9/6/26, the same day as the HPD Emergency Preparedness Coordinator, so if both are wanted they need to go out together. Community Coordinator line despite the Senior title.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 8, "school": 6, "location": 8, "mph": 5, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 8,
+        "mph": 5,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Community Coordinator minimum, already established as a fit through her prior HPD application.",
         "enjoyment": "Loan program administration and project management, document-heavy and desk-based.",
@@ -575,7 +701,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 792856.\n\nMinimum qualifications: A baccalaureate degree and two years of experience in community work or community centered activities related to the duties; or high school graduation and six years of such experience; or an equivalent combination.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED. A data role that sits on the Community Coordinator line rather than a research scientist line, which means her Excel and program database work qualifies without the conferred master's that blocks the DOHMH data analyst postings. 253 Broadway, same building as MOPT and NYC Service.",
       "tuitionNote": "",
-      "scores": { "qualification": 8, "enjoyment": 7, "school": 6, "location": 8, "mph": 6, "mission": 8 },
+      "scores": {
+        "qualification": 8,
+        "enjoyment": 7,
+        "school": 6,
+        "location": 8,
+        "mph": 6,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Meets the Community Coordinator minimum, and her tracking, reporting, and data quality work maps to the data management duties without needing a research credential.",
         "enjoyment": "Data management and reporting suit her, though the outreach framing implies some field coordination.",
@@ -601,7 +734,14 @@
       "requirements": "Civil service title: PRINCIPAL ADMINISTRATIVE ASSOCIATE. Job ID 792191.\n\nMinimum qualifications: A baccalaureate degree and two years of satisfactory full-time progressively responsible clerical/administrative experience, one year of which must have been in an administrative capacity or supervising staff performing clerical/administrative work of more than moderate difficulty; or an equivalent combination.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED. Eligibility determination and support services coordination is close to her United Way rental assistance eligibility work. COMMUTE CAVEAT: 890 Garrison Avenue is in Hunts Point in the Bronx, roughly an hour from Bushwick each way, which is the weakest location in this batch.",
       "tuitionNote": "",
-      "scores": { "qualification": 9, "enjoyment": 7, "school": 6, "location": 5, "mph": 6, "mission": 8 },
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 7,
+        "school": 6,
+        "location": 5,
+        "mph": 6,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Exceeds the Principal Administrative Associate minimum; eligibility processing and administrative supervision are both directly in her history.",
         "enjoyment": "Eligibility and support coordination is administrative, though closer to benefits processing than program design.",
@@ -618,8 +758,8 @@
       "location": "New York, NY - site not specified in posting",
       "salary": "$62,868-$97,593",
       "postedDate": "2026-08-24",
-      "appliedDate": "",
-      "status": "Saved",
+      "appliedDate": "2026-09-10",
+      "status": "Applied",
       "linkType": "direct_employer",
       "deadlineType": "date",
       "url": "https://cityjobs.nyc.gov/job/community-coordinator-in-manhattan-jid-46756",
@@ -627,7 +767,14 @@
       "requirements": "Civil service title: COMMUNITY COORDINATOR. Job ID 788701. Unit: SVP for LHD (Leased Housing Department).\n\nMinimum qualifications: A baccalaureate degree and two years of experience in community work or community centered activities related to the duties; or high school graduation and six years of such experience; or an equivalent combination.",
       "notes": "Added 8/28/26 from the NYC sweep after civil service screening. QUALIFICATION CONFIRMED. Leased Housing is the Section 8 side of NYCHA, which is the closest thing in the city to the Flexible Housing Subsidy Pool work she did at Brilliant Corners: subsidy administration, landlord relationships, and placement stability. Top of band reaches $97,593. VERIFY WORKSITE - the posting names only the SVP office, not a borough.",
       "tuitionNote": "",
-      "scores": { "qualification": 9, "enjoyment": 8, "school": 6, "location": 6, "mph": 5, "mission": 8 },
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 8,
+        "school": 6,
+        "location": 6,
+        "mph": 5,
+        "mission": 8
+      },
       "scoreRationale": {
         "qualification": "Meets the Community Coordinator minimum, and leased housing subsidy administration is the single closest match to her Brilliant Corners portfolio anywhere in this sweep.",
         "enjoyment": "Subsidy and landlord coordination is exactly the work she did as a supervisor, minus the supervision.",
@@ -636,7 +783,84 @@
         "mph": "Housing subsidy administration is a social determinant rather than public health practice.",
         "mission": "Section 8 administration determines whether low income families keep stable housing."
       }
+    },
+    "1700000060000": {
+      "id": 1700000060000,
+      "status": "Applied",
+      "appliedDate": "2026-09-10"
+    },
+    "1700000089000": {
+      "id": 1700000089000,
+      "title": "Community Coordinator, Procurement Operations",
+      "org": "NYC Housing Authority (NYCHA)",
+      "location": "New York, NY - worksite not specified",
+      "salary": "$62,868-$72,298",
+      "postedDate": "2026-08-26",
+      "appliedDate": "2026-09-14",
+      "status": "Applied",
+      "linkType": "direct_employer",
+      "deadlineType": "date",
+      "url": "https://jobs.smartrecruiters.com/CityOfNewYork/e3cf4b93-dac0-4f10-973a-8db1015a50ea-community-coordinator",
+      "closeDate": "2026-09-15",
+      "requirements": "NYCHA Procurement Operations role supporting procurement and construction-services contracts, solicitation review, notices, vendor outreach, bid review, approvals, and progress reporting. Civil service title: Community Coordinator. Job ID 785961.",
+      "notes": "Applied through NYC SmartRecruiters on September 14, 2026 with a tailored resume, cover letter, and hiring-team message.",
+      "tuitionNote": "",
+      "scores": null,
+      "scoreRationale": null
+    },
+    "1700000090000": {
+      "id": 1700000090000,
+      "title": "Research Administrative Assistant, SPaR (Part-Time)",
+      "org": "CUNY Graduate School of Public Health and Health Policy",
+      "location": "New York, NY - hybrid",
+      "salary": "$25/hr, up to 19 hrs/week",
+      "postedDate": "2026-09-14",
+      "appliedDate": "2026-09-14",
+      "status": "Applied",
+      "linkType": "aggregator",
+      "deadlineType": "date",
+      "url": "https://app.joinhandshake.com/jobs/11427162",
+      "closeDate": "2026-10-02",
+      "requirements": "Open to current CUNY SPH master's or PhD students. Maintain grant, award, budget, agreement, approval, and IRB records; track research agreements and compliance; support payment requests and onboarding; manage the SPaR inbox, faculty newsletter, and research events. Bachelor's degree and advanced Microsoft Office skills required.",
+      "notes": "Posted on Handshake September 14, 2026 and applied by email to SPaR@sph.cuny.edu the same day with a tailored resume and cover letter. Handshake showed all qualifications matched.",
+      "tuitionNote": "",
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 9,
+        "school": 10,
+        "location": 8,
+        "mph": 10,
+        "mission": 8
+      },
+      "scoreRationale": {
+        "qualification": "Direct match for records management, grant compliance, reporting, financial documentation, and administrative coordination; current CUNY SPH enrollment satisfies the eligibility gate.",
+        "enjoyment": "Back-end research administration and faculty support with no caseload or staff supervision.",
+        "school": "Part-time, hybrid, capped at 19 hours, and designed specifically for a current CUNY SPH student.",
+        "location": "Hybrid role based at CUNY SPH in Harlem.",
+        "mph": "Hands-on sponsored research, IRB, and research compliance experience directly supports the MPH pathway.",
+        "mission": "Supports public health research infrastructure at CUNY SPH."
+      }
+    },
+    "1700000091000": {
+      "id": 1700000091000,
+      "title": "Research Assistant, Center for Systems and Community Design (Part-Time)",
+      "org": "CUNY Graduate School of Public Health and Health Policy",
+      "location": "New York, NY - hybrid/on campus",
+      "salary": "$25-$30/hr",
+      "postedDate": "2026-09-11",
+      "appliedDate": "2026-09-14",
+      "status": "Applied",
+      "linkType": "aggregator",
+      "deadlineType": "date",
+      "url": "https://app.joinhandshake.com/jobs/11412258",
+      "closeDate": "2026-10-02",
+      "requirements": "Current CUNY SPH graduate student in good standing. Research support using system dynamics modeling, statistical and geospatial analysis, dashboards, qualitative data, literature review, data collection protocols, reports, presentations, and manuscripts. Posting requests experience with statistical software, database platforms, GIS, and dashboard tools.",
+      "notes": "Applied by email to Dr. Nasim Sabounchi on September 14, 2026 with a tailored resume and cover letter. Posted September 11 and reviewed on a rolling basis. Honest reach: strong Excel, program database, reporting, and data-quality background; no professional R or GIS experience claimed.",
+      "tuitionNote": "",
+      "scores": null,
+      "scoreRationale": null
     }
   },
   "deletedIds": []
 }
+
