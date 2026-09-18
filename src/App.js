@@ -300,6 +300,18 @@ const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appli
 // Publicly verified outreach contacts for applied roles. Kept separate from the
 // synced job data so phone-side status and application edits are never replaced.
 const OUTREACH_CONTACTS = {
+  "1700000021000": {
+    hiringManagerName:"Tracey Thorne",
+    hiringManagerTitle:"Director of Runaway and Homeless Youth Programs, DYCD",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/traceythorne",
+    hiringManagerNote:"Named DYCD program leader from our earlier research; not confirmed as the direct supervisor for this Operations Analyst opening.",
+  },
+  "1700000024000": {
+    hiringManagerName:"Andrea Foley-Murphy",
+    hiringManagerTitle:"Director of Client and Owner Services, HPD Section 8",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/andrea-foley-murphy-673062227",
+    hiringManagerNote:"Owner Services leader identified in our earlier research; useful routing contact, but not confirmed as the direct supervisor for this opening.",
+  },
   "1700000032000": {
     recruiterName:"Lina Hurston",
     recruiterTitle:"Deputy Director, Talent Acquisition",
@@ -307,7 +319,23 @@ const OUTREACH_CONTACTS = {
     recruiterLinkedIn:"https://www.linkedin.com/in/lina-hurston-mshrm-phr",
     recruiterNote:"Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
   },
+  "1700000036000": {
+    hiringManagerName:"Andrea Foley-Murphy",
+    hiringManagerTitle:"Director of Client and Owner Services, HPD Section 8",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/andrea-foley-murphy-673062227",
+    hiringManagerNote:"Owner Services leader identified in our earlier research; useful routing contact for the under-review application, but not confirmed as the direct supervisor.",
+  },
+  "1700000039000": {
+    hiringManagerName:"Allison Hirschhorn",
+    hiringManagerTitle:"Administrative Contract Specialist, DYCD",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/allison-hirschhorn",
+    hiringManagerNote:"DYCD contracts leader who has publicly recruited for agency analyst roles; relevant routing contact for the Contract Development Unit, but not confirmed as this opening's supervisor.",
+  },
   "1700000037000": {
+    recruiterName:"Georvhari Fletcher",
+    recruiterTitle:"Human Resources Personnel Manager, Public Health Solutions / NYC DOHMH",
+    recruiterLinkedIn:"https://www.linkedin.com/in/georvhari-fletcher-72587565",
+    recruiterNote:"PHS/DOHMH human-resources routing contact; not confirmed as the recruiter assigned to requisition 1668.",
     hiringManagerTitle:"Portfolio Manager",
     hiringManagerNote:"The posting says this role reports to a Portfolio Manager. The current person has not been verified yet.",
   },
@@ -317,13 +345,26 @@ const OUTREACH_CONTACTS = {
     hiringManagerLinkedIn:"https://www.linkedin.com/in/luna-malachowski-bajak-lcsw-351114285",
     hiringManagerNote:"Exact match: the posting says the Program Assistant reports to the Senior Director of Programs.",
   },
+  "1700000050000": {
+    recruiterName:"Amit Kaushish",
+    recruiterTitle:"Senior Recruitment Consultant, Experis",
+    recruiterLinkedIn:"https://ca.linkedin.com/in/amit-kaushish-63446871",
+    recruiterNote:"Experis recruiter handling U.S. and Canadian contract roles; not confirmed as the recruiter assigned to this opening, but able to route a follow-up.",
+  },
   "1700000067000": {
     recruiterName:"Lauren Siegel",
     recruiterTitle:"Lead Recruiter",
     recruiterLinkedIn:"https://www.linkedin.com/in/laurensiegel23",
     recruiterNote:"HCZ Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
+    hiringManagerName:"Damond Stubbs",
     hiringManagerTitle:"Director of Financial Education or Assistant Director of Financial Inclusion and Family Empowerment",
-    hiringManagerNote:"These are the two supervisor titles named in the posting. The current people have not been verified yet.",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/damondstubbs",
+    hiringManagerNote:"Damond was the HCZ program contact found in our earlier research. The posting names the Director of Financial Education or Assistant Director of Financial Inclusion and Family Empowerment as the supervisor, so his exact relationship to this opening is not confirmed.",
+  },
+  "1700000064000": {
+    hiringManagerName:"Dr. Terra A. Cederroth",
+    hiringManagerTitle:"Deputy Chief Medical Examiner; former Associate Program Director",
+    hiringManagerNote:"OCME fellowship leader found in our earlier research. The posting says this role reports to the Designated Institutional Official; Dr. Cederroth's current DIO status is not confirmed.",
   },
   "1700000065000": {
     recruiterName:"Violet Bube",
@@ -336,6 +377,28 @@ const OUTREACH_CONTACTS = {
     hiringManagerEmail:"joanne.mason@slu.cuny.edu",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/joanne-mason-1879058b",
     hiringManagerNote:"Exact match: the posting says this role reports to the Associate Director of Worker Education and Workforce Development.",
+  },
+  "1700000052000": {
+    recruiterName:"Tisha E.",
+    recruiterTitle:"Recruiter, NYC Human Resources Administration",
+    recruiterLinkedIn:"https://www.linkedin.com/in/tishae12",
+    recruiterNote:"Current HRA recruiter and practical routing contact; not confirmed as the recruiter assigned to job ID 786098.",
+    hiringManagerTitle:"Shelter Support / Rehousing Support program supervisor",
+    hiringManagerNote:"The posting did not name the supervisor. Keep this as the role to search for before sending a targeted follow-up.",
+  },
+  "1700000057000": {
+    recruiterName:"DeJimon Brooks",
+    recruiterTitle:"Human Resources and Program Coordinator, CUNY Cultural Corps",
+    recruiterNote:"Named Cultural Corps HR and program contact; useful for routing a follow-up about the coordinator application.",
+    hiringManagerName:"Kimberlee Rios",
+    hiringManagerTitle:"Senior Program Manager, CUNY Cultural Corps",
+    hiringManagerNote:"Current senior program lead listed by CUNY Cultural Corps; likely program-side contact, though the posting did not explicitly confirm the reporting line.",
+  },
+  "1700000060000": {
+    hiringManagerName:"Annie Gurvis",
+    hiringManagerTitle:"Special Advisor for Policy and Planning, NYC Office of the Mayor",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/agurvis",
+    hiringManagerNote:"Exact role match: the posting says the Policy Analyst reports to the Special Advisor for Policy and Planning. Annie Gurvis publicly announced that she currently holds that title.",
   },
   "1700000069000": {
     hiringManagerName:"Rachel Zeig-Owens",
@@ -355,11 +418,23 @@ const OUTREACH_CONTACTS = {
     hiringManagerNote:"Exact match: the posting says the intern reports to the Senior Associate, Policy and Advocacy.",
   },
   "1700000072000": {
+    recruiterName:"Ebonie Mikhaiel",
+    recruiterTitle:"Program Assistant, Special Projects Fund",
+    recruiterEmail:"mikhaiel@nyhealthfoundation.org",
+    recruiterLinkedIn:"https://www.linkedin.com/in/ebonie-mikhaiel-3b66011a2",
+    recruiterNote:"Special Projects Fund team contact from our earlier research; not a recruiter, but well positioned to route a concise follow-up.",
     hiringManagerName:"Sophia Silao",
     hiringManagerTitle:"Program Officer, Special Projects Fund",
     hiringManagerEmail:"silao@nyhealthfoundation.org",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/sophia-silao",
     hiringManagerNote:"The posting says the intern works closely with the program officer; Sophia currently manages the Special Projects Fund.",
+  },
+  "1700000073000": {
+    hiringManagerName:"Dr. Oni Blackstock",
+    hiringManagerTitle:"Founder and Executive Director, Health Justice",
+    hiringManagerEmail:"oniblackstock@healthjustice.co",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/oni-blackstock",
+    hiringManagerNote:"Health Justice founder and LIFHE contact identified in our earlier research; likely project lead, though the posting did not confirm the direct-report relationship.",
   },
   "1700000079000": {
     hiringManagerName:"Michael Agnew",
@@ -379,12 +454,19 @@ const OUTREACH_CONTACTS = {
     recruiterTitle:"Talent Acquisition Leader, NYCHA",
     recruiterLinkedIn:"https://www.linkedin.com/in/laquanya-d-goodman-mpa",
     recruiterNote:"NYCHA Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
+    hiringManagerName:"Lillian Harris",
+    hiringManagerTitle:"Senior Vice President for Leased Housing",
+    hiringManagerNote:"The role sits in the Office of the SVP for Leased Housing. Lillian is the office leader identified in our earlier research, but the day-to-day supervisor was not confirmed.",
   },
   "1700000089000": {
     recruiterName:"LaQuanya D. Goodman",
     recruiterTitle:"Talent Acquisition Leader, NYCHA",
     recruiterLinkedIn:"https://www.linkedin.com/in/laquanya-d-goodman-mpa",
     recruiterNote:"NYCHA Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
+    hiringManagerName:"Ismael (Tony) Maldonado",
+    hiringManagerTitle:"Senior Vice President of Supply Chain Management",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/ismael-tony-maldonado-70353951",
+    hiringManagerNote:"NYCHA procurement and supply-chain leader identified in our earlier research; relevant routing contact, but not confirmed as the direct supervisor.",
   },
   "1700000090000": {
     recruiterName:"Arthur McHugh",
