@@ -295,122 +295,123 @@ const followUpSort = job => {
   return -age;
 };
 
-const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appliedDate:"",closeDate:"",status:"Saved",deadlineType:"not_published",linkType:"unverified",url:"",requirements:"",notes:"",tuitionNote:"",recruiterName:"",recruiterEmail:"",recruiterLinkedIn:"",hiringManagerName:"",hiringManagerEmail:"",hiringManagerLinkedIn:"",scores:null,scoreRationale:null};
+const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appliedDate:"",closeDate:"",status:"Saved",deadlineType:"not_published",linkType:"unverified",url:"",requirements:"",notes:"",tuitionNote:"",recruiterName:"",recruiterTitle:"",recruiterEmail:"",recruiterLinkedIn:"",recruiterNote:"",hiringManagerName:"",hiringManagerTitle:"",hiringManagerEmail:"",hiringManagerLinkedIn:"",hiringManagerNote:"",scores:null,scoreRationale:null};
 
 // Publicly verified outreach contacts for applied roles. Kept separate from the
 // synced job data so phone-side status and application edits are never replaced.
 const OUTREACH_CONTACTS = {
-  "1700000021000": {
-    hiringManagerName:"Tracey Thorne",
-    hiringManagerLinkedIn:"https://www.linkedin.com/in/traceythorne",
-  },
-  "1700000024000": {
-    recruiterName:"HPD Owner Services (official inbox)",
-    recruiterEmail:"s8landlords@hpd.nyc.gov",
-    hiringManagerName:"Andrea Foley-Murphy",
-    hiringManagerLinkedIn:"https://www.linkedin.com/in/andrea-foley-murphy-673062227",
-  },
   "1700000032000": {
     recruiterName:"Lina Hurston",
+    recruiterTitle:"Deputy Director, Talent Acquisition",
     recruiterEmail:"hurstona@nychhc.org",
     recruiterLinkedIn:"https://www.linkedin.com/in/lina-hurston-mshrm-phr",
-  },
-  "1700000036000": {
-    recruiterName:"HPD Owner Services (official inbox)",
-    recruiterEmail:"s8landlords@hpd.nyc.gov",
-    hiringManagerName:"Andrea Foley-Murphy",
-    hiringManagerLinkedIn:"https://www.linkedin.com/in/andrea-foley-murphy-673062227",
+    recruiterNote:"Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
   },
   "1700000037000": {
-    recruiterName:"Public Health Solutions Careers",
-    recruiterLinkedIn:"https://www.linkedin.com/company/public-health-solutions",
-  },
-  "1700000039000": {
-    recruiterName:"DYCD Contract Development Unit",
-    recruiterEmail:"cdu@dycd.nyc.gov",
+    hiringManagerTitle:"Portfolio Manager",
+    hiringManagerNote:"The posting says this role reports to a Portfolio Manager. The current person has not been verified yet.",
   },
   "1700000047000": {
-    recruiterName:"The Partnership Hiring Team",
-    recruiterEmail:"info@thepartnershipnyc.org",
     hiringManagerName:"Luna Bajak",
+    hiringManagerTitle:"Senior Director of Programs",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/luna-malachowski-bajak-lcsw-351114285",
+    hiringManagerNote:"Exact match: the posting says the Program Assistant reports to the Senior Director of Programs.",
   },
   "1700000067000": {
     recruiterName:"Lauren Siegel",
+    recruiterTitle:"Lead Recruiter",
     recruiterLinkedIn:"https://www.linkedin.com/in/laurensiegel23",
-    hiringManagerName:"Damond Stubbs",
-    hiringManagerLinkedIn:"https://www.linkedin.com/in/damondstubbs",
-  },
-  "1700000064000": {
-    recruiterName:"OCME Careers",
-    recruiterLinkedIn:"https://www.linkedin.com/company/nyc-office-of-chief-medical-examiner",
-    hiringManagerName:"Dr. Terra A. Cederroth",
+    recruiterNote:"HCZ Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
+    hiringManagerTitle:"Director of Financial Education or Assistant Director of Financial Inclusion and Family Empowerment",
+    hiringManagerNote:"These are the two supervisor titles named in the posting. The current people have not been verified yet.",
   },
   "1700000065000": {
     recruiterName:"Violet Bube",
+    recruiterTitle:"Human Resources Manager, CUNY SLU",
     recruiterEmail:"violet.bube@slu.cuny.edu",
+    recruiterLinkedIn:"https://www.linkedin.com/in/violet-bube-msilr-sphr",
+    recruiterNote:"SLU Human Resources routing contact; not confirmed as the recruiter assigned to this opening.",
     hiringManagerName:"Joanne Mason",
+    hiringManagerTitle:"Associate Director of Worker Education",
     hiringManagerEmail:"joanne.mason@slu.cuny.edu",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/joanne-mason-1879058b",
+    hiringManagerNote:"Exact match: the posting says this role reports to the Associate Director of Worker Education and Workforce Development.",
   },
   "1700000069000": {
     hiringManagerName:"Rachel Zeig-Owens",
+    hiringManagerTitle:"Director of Epidemiology",
+    hiringManagerEmail:"rachel.zeig-owens@fdny.nyc.gov",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/rachel-zeig-owens-4bb72a9",
+    hiringManagerNote:"Named in the posting as the person to receive the resume and cover letter.",
   },
   "1700000071000": {
-    recruiterName:"Citymeals Careers",
-    recruiterEmail:"careers@citymeals.org",
+    recruiterName:"Marla Trugerman",
+    recruiterTitle:"Director, Human Resources",
+    recruiterLinkedIn:"https://www.linkedin.com/in/marla-trugerman",
+    recruiterNote:"Citymeals HR routing contact; not confirmed as the recruiter assigned to this internship.",
     hiringManagerName:"Emma Bessire",
+    hiringManagerTitle:"Senior Associate, Policy and Advocacy",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/emma-lentz-bessire-445768129",
+    hiringManagerNote:"Exact match: the posting says the intern reports to the Senior Associate, Policy and Advocacy.",
   },
   "1700000072000": {
-    recruiterName:"Ebonie Mikhaiel",
-    recruiterEmail:"mikhaiel@nyhealthfoundation.org",
-    recruiterLinkedIn:"https://www.linkedin.com/in/ebonie-mikhaiel-3b66011a2",
     hiringManagerName:"Sophia Silao",
+    hiringManagerTitle:"Program Officer, Special Projects Fund",
     hiringManagerEmail:"silao@nyhealthfoundation.org",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/sophia-silao",
-  },
-  "1700000073000": {
-    recruiterName:"Health Justice",
-    recruiterEmail:"info@healthjustice.co",
-    hiringManagerName:"Dr. Oni Blackstock",
-    hiringManagerLinkedIn:"https://www.linkedin.com/in/oni-blackstock",
+    hiringManagerNote:"The posting says the intern works closely with the program officer; Sophia currently manages the Special Projects Fund.",
   },
   "1700000079000": {
     hiringManagerName:"Michael Agnew",
+    hiringManagerTitle:"Director of Emergency Preparedness",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/magnew",
+    hiringManagerNote:"Exact team lead: he publicly described this opening as a role joining his team.",
   },
   "1700000084000": {
     hiringManagerName:"Sunny Velez",
+    hiringManagerTitle:"Director of Small Homes Stabilization Programs",
     hiringManagerEmail:"velezsu@hpd.nyc.gov",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/sunnyvelez",
+    hiringManagerNote:"Exact match to the direct-report title named in the posting.",
   },
   "1700000088000": {
     recruiterName:"LaQuanya D. Goodman",
+    recruiterTitle:"Talent Acquisition Leader, NYCHA",
     recruiterLinkedIn:"https://www.linkedin.com/in/laquanya-d-goodman-mpa",
-    hiringManagerName:"Lillian Harris",
+    recruiterNote:"NYCHA Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
   },
   "1700000089000": {
     recruiterName:"LaQuanya D. Goodman",
+    recruiterTitle:"Talent Acquisition Leader, NYCHA",
     recruiterLinkedIn:"https://www.linkedin.com/in/laquanya-d-goodman-mpa",
-    hiringManagerName:"Ismael (Tony) Maldonado",
-    hiringManagerLinkedIn:"https://www.linkedin.com/in/ismael-tony-maldonado-70353951",
+    recruiterNote:"NYCHA Talent Acquisition routing contact; not confirmed as the recruiter assigned to this opening.",
   },
   "1700000090000": {
-    recruiterName:"CUNY SPH SPaR Team",
-    recruiterEmail:"spar@sph.cuny.edu",
+    recruiterName:"Arthur McHugh",
+    recruiterTitle:"Director of Human Resources, CUNY SPH",
+    recruiterEmail:"arthur.mchugh@sph.cuny.edu",
+    recruiterLinkedIn:"https://www.linkedin.com/in/arthur-mchugh-596b2a195",
+    recruiterNote:"CUNY SPH Human Resources routing contact; not confirmed as the recruiter assigned to this opening.",
     hiringManagerName:"Delphine Yaghmaian",
+    hiringManagerTitle:"Research Program Director",
     hiringManagerEmail:"delphine.yaghmaian@sph.cuny.edu",
+    hiringManagerNote:"Exact match: the posting says this role reports to the Research Program Director.",
   },
   "1700000091000": {
+    recruiterName:"Arthur McHugh",
+    recruiterTitle:"Director of Human Resources, CUNY SPH",
+    recruiterEmail:"arthur.mchugh@sph.cuny.edu",
+    recruiterLinkedIn:"https://www.linkedin.com/in/arthur-mchugh-596b2a195",
+    recruiterNote:"CUNY SPH Human Resources routing contact; not confirmed as the recruiter assigned to this opening.",
     hiringManagerName:"Dr. Nasim Sabounchi",
+    hiringManagerTitle:"Associate Professor, Health Policy and Management",
     hiringManagerEmail:"nasim.sabounchi@sph.cuny.edu",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/nasim-sabounchi-44647714",
+    hiringManagerNote:"Named in the posting as the application recipient and research-team contact.",
   },
 };
 
-const CONTACT_FIELDS = ["recruiterName","recruiterEmail","recruiterLinkedIn","hiringManagerName","hiringManagerEmail","hiringManagerLinkedIn"];
+const CONTACT_FIELDS = ["recruiterName","recruiterTitle","recruiterEmail","recruiterLinkedIn","recruiterNote","hiringManagerName","hiringManagerTitle","hiringManagerEmail","hiringManagerLinkedIn","hiringManagerNote"];
 const outreachContactsFor = job => {
   const verified = OUTREACH_CONTACTS[String(job?.id)]||{};
   return Object.fromEntries(CONTACT_FIELDS.map(key=>[key,job?.[key]||verified[key]||""]));
@@ -711,12 +712,13 @@ const DimBar = ({label, icon, val, rationale}) => {
   );
 };
 
-const ContactCard = ({role,name,email,linkedin}) => {
-  const hasContact = name||email||linkedin;
+const ContactCard = ({role,name,title,email,linkedin,note}) => {
+  const hasContact = name||title||email||linkedin;
   return (
     <div style={{background:"#0a1020",borderRadius:14,padding:"14px",border:"1px solid rgba(255,255,255,0.07)"}}>
       <div style={{fontSize:10,color:"#4B9EFF",textTransform:"uppercase",letterSpacing:"0.1em",fontWeight:800,marginBottom:5}}>{role}</div>
-      <div style={{fontSize:15,color:hasContact?"#e2e8f0":"#64748b",fontWeight:700,marginBottom:10}}>{name||"Name not added"}</div>
+      <div style={{fontSize:15,color:hasContact?"#e2e8f0":"#64748b",fontWeight:700,marginBottom:title?2:10}}>{name||"Person not verified"}</div>
+      {title && <div style={{fontSize:12,color:"#94a3b8",fontWeight:600,lineHeight:1.45,marginBottom:10}}>{title}</div>}
       <div style={{display:"flex",flexWrap:"wrap",gap:7}}>
         {email
           ? <a href={`mailto:${email}`} style={{background:"rgba(54,201,167,0.09)",border:"1px solid rgba(54,201,167,0.25)",color:"#36C9A7",borderRadius:9,padding:"7px 10px",fontSize:12,fontWeight:700,textDecoration:"none"}}>✉ Email</a>
@@ -725,6 +727,7 @@ const ContactCard = ({role,name,email,linkedin}) => {
           ? <a href={externalUrl(linkedin)} target="_blank" rel="noreferrer" style={{background:"rgba(75,158,255,0.09)",border:"1px solid rgba(75,158,255,0.25)",color:"#4B9EFF",borderRadius:9,padding:"7px 10px",fontSize:12,fontWeight:700,textDecoration:"none"}}>in LinkedIn</a>
           : <span style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",color:"#475569",borderRadius:9,padding:"7px 10px",fontSize:12}}>No LinkedIn</span>}
       </div>
+      {note && <p style={{fontSize:11,color:"#64748b",lineHeight:1.5,margin:"10px 0 0"}}>{note}</p>}
     </div>
   );
 };
@@ -882,8 +885,8 @@ const Sheet = ({job, onEdit, onClose, onResume}) => {
               <span style={{fontSize:20}}>🤝</span>
             </div>
             <div style={{display:"grid",gap:10}}>
-              <ContactCard role="Recruiter" name={contacts.recruiterName} email={contacts.recruiterEmail} linkedin={contacts.recruiterLinkedIn}/>
-              <ContactCard role="Hiring Manager" name={contacts.hiringManagerName} email={contacts.hiringManagerEmail} linkedin={contacts.hiringManagerLinkedIn}/>
+              <ContactCard role="Recruiting / Talent Acquisition" name={contacts.recruiterName} title={contacts.recruiterTitle} email={contacts.recruiterEmail} linkedin={contacts.recruiterLinkedIn} note={contacts.recruiterNote}/>
+              <ContactCard role="Direct report / role contact" name={contacts.hiringManagerName} title={contacts.hiringManagerTitle} email={contacts.hiringManagerEmail} linkedin={contacts.hiringManagerLinkedIn} note={contacts.hiringManagerNote}/>
             </div>
           </div>}
 
@@ -986,20 +989,28 @@ const EditModal = ({job, onClose, onSave, onDelete}) => {
             </div>
             <div style={{display:"grid",gap:10}}>
               <div style={{background:"#0a1020",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:12}}>
-                <div style={{fontSize:11,color:"#4B9EFF",fontWeight:800,marginBottom:9}}>Recruiter</div>
+                <div style={{fontSize:11,color:"#4B9EFF",fontWeight:800,marginBottom:9}}>Recruiting / Talent Acquisition</div>
                 <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:8}}>
                   <input aria-label="Recruiter name" placeholder="Name" style={inp} value={form.recruiterName||""} onChange={e=>set("recruiterName",e.target.value)}/>
-                  <input aria-label="Recruiter email" placeholder="Email" type="email" style={inp} value={form.recruiterEmail||""} onChange={e=>set("recruiterEmail",e.target.value)}/>
+                  <input aria-label="Recruiter title" placeholder="Current title" style={inp} value={form.recruiterTitle||""} onChange={e=>set("recruiterTitle",e.target.value)}/>
                 </div>
-                <input aria-label="Recruiter LinkedIn" placeholder="LinkedIn profile URL" type="url" style={inp} value={form.recruiterLinkedIn||""} onChange={e=>set("recruiterLinkedIn",e.target.value)}/>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:8}}>
+                  <input aria-label="Recruiter email" placeholder="Email" type="email" style={inp} value={form.recruiterEmail||""} onChange={e=>set("recruiterEmail",e.target.value)}/>
+                  <input aria-label="Recruiter LinkedIn" placeholder="LinkedIn profile URL" type="url" style={inp} value={form.recruiterLinkedIn||""} onChange={e=>set("recruiterLinkedIn",e.target.value)}/>
+                </div>
+                <input aria-label="Recruiter verification note" placeholder="Why this is the right recruiting contact" style={inp} value={form.recruiterNote||""} onChange={e=>set("recruiterNote",e.target.value)}/>
               </div>
               <div style={{background:"#0a1020",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:12}}>
-                <div style={{fontSize:11,color:"#4B9EFF",fontWeight:800,marginBottom:9}}>Hiring Manager</div>
+                <div style={{fontSize:11,color:"#4B9EFF",fontWeight:800,marginBottom:9}}>Direct report / role contact</div>
                 <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:8}}>
                   <input aria-label="Hiring manager name" placeholder="Name" style={inp} value={form.hiringManagerName||""} onChange={e=>set("hiringManagerName",e.target.value)}/>
-                  <input aria-label="Hiring manager email" placeholder="Email" type="email" style={inp} value={form.hiringManagerEmail||""} onChange={e=>set("hiringManagerEmail",e.target.value)}/>
+                  <input aria-label="Hiring manager title" placeholder="Title named in posting" style={inp} value={form.hiringManagerTitle||""} onChange={e=>set("hiringManagerTitle",e.target.value)}/>
                 </div>
-                <input aria-label="Hiring manager LinkedIn" placeholder="LinkedIn profile URL" type="url" style={inp} value={form.hiringManagerLinkedIn||""} onChange={e=>set("hiringManagerLinkedIn",e.target.value)}/>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:8}}>
+                  <input aria-label="Hiring manager email" placeholder="Email" type="email" style={inp} value={form.hiringManagerEmail||""} onChange={e=>set("hiringManagerEmail",e.target.value)}/>
+                  <input aria-label="Hiring manager LinkedIn" placeholder="LinkedIn profile URL" type="url" style={inp} value={form.hiringManagerLinkedIn||""} onChange={e=>set("hiringManagerLinkedIn",e.target.value)}/>
+                </div>
+                <input aria-label="Hiring manager verification note" placeholder="How the posting identifies this contact" style={inp} value={form.hiringManagerNote||""} onChange={e=>set("hiringManagerNote",e.target.value)}/>
               </div>
             </div>
           </div>
@@ -1377,11 +1388,11 @@ export default function App() {
                 <div style={{fontSize:36,marginBottom:12,opacity:0.2}}>🗂</div>
                 <p style={{color:"#475569",fontSize:13,margin:0}}>{jobs.length===0?"Drop a job posting in chat — I'll add it here":"No matches found"}</p>
               </div>
-            : filtered.map(job=><Card key={job.id} job={job} onTap={()=>setSheet(job)} onFollowUp={()=>setEditModal(job)}/>)
+            : filtered.map(job=><Card key={job.id} job={job} onTap={()=>setSheet(job)} onFollowUp={()=>setEditModal({...job,...outreachContactsFor(job)})}/>)
         }
       </div>
 
-      {sheet     && <Sheet     job={sheet}     onEdit={j=>{ setSheet(null); setEditModal(j); }} onClose={()=>setSheet(null)} onResume={j=>setResumeModal(j)}/>}
+      {sheet     && <Sheet     job={sheet}     onEdit={j=>{ setSheet(null); setEditModal({...j,...outreachContactsFor(j)}); }} onClose={()=>setSheet(null)} onResume={j=>setResumeModal(j)}/>}
       {editModal && <EditModal job={editModal} onClose={()=>setEditModal(null)} onSave={handleSave} onDelete={handleDelete}/>}
       {resumeModal && <ResumeGenerator job={resumeModal} onClose={()=>setResumeModal(null)}/>}
     </div>
