@@ -751,10 +751,10 @@ const FOLLOW_UP = {
 const applicationUrgency = appliedDate => {
   const age = daysSince(appliedDate);
   if(age==null) return {label:"Set follow-up", icon:"○", color:"#94a3b8", bg:"rgba(148,163,184,0.08)", age};
-  if(age<=3) return {label:`Fresh · ${age}d`, icon:"○", color:"#7DD3FC", bg:"rgba(125,211,252,0.10)", age};
-  if(age<=7) return {label:`Soon · ${age}d`, icon:"◷", color:"#F9B233", bg:"rgba(249,178,51,0.10)", age};
-  if(age<=14) return {label:`Due · ${age}d`, icon:"↗", color:"#FB923C", bg:"rgba(251,146,60,0.11)", age};
-  return {label:`Overdue · ${age}d`, icon:"!", color:"#FF7B72", bg:"rgba(255,123,114,0.11)", age};
+  if(age<=3) return {label:`Follow-up later · ${age}d`, icon:"○", color:"#7DD3FC", bg:"rgba(125,211,252,0.10)", age};
+  if(age<=7) return {label:`Follow-up soon · ${age}d`, icon:"◷", color:"#F9B233", bg:"rgba(249,178,51,0.10)", age};
+  if(age<=14) return {label:`Follow-up due · ${age}d`, icon:"↗", color:"#FB923C", bg:"rgba(251,146,60,0.11)", age};
+  return {label:`Follow-up overdue · ${age}d`, icon:"!", color:"#FF7B72", bg:"rgba(255,123,114,0.11)", age};
 };
 
 const EditModal = ({job, onClose, onSave, onDelete}) => {
