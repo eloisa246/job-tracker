@@ -297,6 +297,94 @@ const followUpSort = job => {
 
 const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appliedDate:"",closeDate:"",status:"Saved",deadlineType:"not_published",linkType:"unverified",url:"",requirements:"",notes:"",tuitionNote:"",recruiterName:"",recruiterEmail:"",recruiterLinkedIn:"",hiringManagerName:"",hiringManagerEmail:"",hiringManagerLinkedIn:"",scores:null,scoreRationale:null};
 
+// Publicly verified outreach contacts for applied roles. Kept separate from the
+// synced job data so phone-side status and application edits are never replaced.
+const OUTREACH_CONTACTS = {
+  "1700000021000": {
+    hiringManagerName:"Tracey Thorne",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/traceythorne",
+  },
+  "1700000024000": {
+    recruiterName:"HPD Owner Services (official inbox)",
+    recruiterEmail:"s8landlords@hpd.nyc.gov",
+    hiringManagerName:"Andrea Foley-Murphy",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/andrea-foley-murphy-673062227",
+  },
+  "1700000039000": {
+    recruiterName:"DYCD Contract Development Unit",
+    recruiterEmail:"cdu@dycd.nyc.gov",
+  },
+  "1700000047000": {
+    recruiterName:"The Partnership Hiring Team",
+    recruiterEmail:"info@thepartnershipnyc.org",
+    hiringManagerName:"Luna Bajak",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/luna-malachowski-bajak-lcsw-351114285",
+  },
+  "1700000067000": {
+    recruiterName:"Lauren Siegel",
+    recruiterLinkedIn:"https://www.linkedin.com/in/laurensiegel23",
+    hiringManagerName:"Damond Stubbs",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/damondstubbs",
+  },
+  "1700000071000": {
+    recruiterName:"Citymeals Careers",
+    recruiterEmail:"careers@citymeals.org",
+    hiringManagerName:"Emma Bessire",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/emma-lentz-bessire-445768129",
+  },
+  "1700000072000": {
+    recruiterName:"Ebonie Mikhaiel",
+    recruiterEmail:"mikhaiel@nyhealthfoundation.org",
+    recruiterLinkedIn:"https://www.linkedin.com/in/ebonie-mikhaiel-3b66011a2",
+    hiringManagerName:"Sophia Silao",
+    hiringManagerEmail:"silao@nyhealthfoundation.org",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/sophia-silao",
+  },
+  "1700000073000": {
+    recruiterName:"Health Justice",
+    recruiterEmail:"info@healthjustice.co",
+    hiringManagerName:"Dr. Oni Blackstock",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/oni-blackstock",
+  },
+  "1700000079000": {
+    hiringManagerName:"Michael Agnew",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/magnew",
+  },
+  "1700000084000": {
+    hiringManagerName:"Sunny Velez",
+    hiringManagerEmail:"velezsu@hpd.nyc.gov",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/sunnyvelez",
+  },
+  "1700000088000": {
+    recruiterName:"LaQuanya D. Goodman",
+    recruiterLinkedIn:"https://www.linkedin.com/in/laquanya-d-goodman-mpa",
+    hiringManagerName:"Lillian Harris",
+  },
+  "1700000089000": {
+    recruiterName:"LaQuanya D. Goodman",
+    recruiterLinkedIn:"https://www.linkedin.com/in/laquanya-d-goodman-mpa",
+    hiringManagerName:"Ismael (Tony) Maldonado",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/ismael-tony-maldonado-70353951",
+  },
+  "1700000090000": {
+    recruiterName:"CUNY SPH SPaR Team",
+    recruiterEmail:"spar@sph.cuny.edu",
+    hiringManagerName:"Delphine Yaghmaian",
+    hiringManagerEmail:"delphine.yaghmaian@sph.cuny.edu",
+  },
+  "1700000091000": {
+    hiringManagerName:"Dr. Nasim Sabounchi",
+    hiringManagerEmail:"nasim.sabounchi@sph.cuny.edu",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/nasim-sabounchi-44647714",
+  },
+};
+
+const CONTACT_FIELDS = ["recruiterName","recruiterEmail","recruiterLinkedIn","hiringManagerName","hiringManagerEmail","hiringManagerLinkedIn"];
+const outreachContactsFor = job => {
+  const verified = OUTREACH_CONTACTS[String(job?.id)]||{};
+  return Object.fromEntries(CONTACT_FIELDS.map(key=>[key,job?.[key]||verified[key]||""]));
+};
+
 const MASTER_RESUME = `ELOISA MELENDEZ
 Relocating to New York, NY | eloisam6@comcast.net | linkedin.com/in/eloisamelendez
 
@@ -616,6 +704,7 @@ const Sheet = ({job, onEdit, onClose, onResume}) => {
   const ov = overall(job.scores);
   const sc = STATUS_CONFIG[job.status];
   const days = daysUntil(job.closeDate);
+  const contacts = outreachContactsFor(job);
 
   return (
     <div style={{position:"fixed",inset:0,zIndex:100,display:"flex",flexDirection:"column",justifyContent:"flex-end"}}
@@ -762,8 +851,8 @@ const Sheet = ({job, onEdit, onClose, onResume}) => {
               <span style={{fontSize:20}}>🤝</span>
             </div>
             <div style={{display:"grid",gap:10}}>
-              <ContactCard role="Recruiter" name={job.recruiterName} email={job.recruiterEmail} linkedin={job.recruiterLinkedIn}/>
-              <ContactCard role="Hiring Manager" name={job.hiringManagerName} email={job.hiringManagerEmail} linkedin={job.hiringManagerLinkedIn}/>
+              <ContactCard role="Recruiter" name={contacts.recruiterName} email={contacts.recruiterEmail} linkedin={contacts.recruiterLinkedIn}/>
+              <ContactCard role="Hiring Manager" name={contacts.hiringManagerName} email={contacts.hiringManagerEmail} linkedin={contacts.hiringManagerLinkedIn}/>
             </div>
           </div>}
 
@@ -803,7 +892,7 @@ const applicationUrgency = appliedDate => {
 };
 
 const EditModal = ({job, onClose, onSave, onDelete}) => {
-  const [form, setForm] = useState(job);
+  const [form, setForm] = useState(()=>({...job,...outreachContactsFor(job)}));
   const isNew = !job.id;
   const set = (k,v) => setForm(f=>({...f,[k]:v}));
   const inp = {background:"#0a1020",border:"1px solid rgba(255,255,255,0.1)",borderRadius:10,color:"#e2e8f0",
