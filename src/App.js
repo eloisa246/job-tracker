@@ -171,6 +171,7 @@ const STATUS_CONFIG = {
 
 const SORT_OPTIONS = [
   { key:"closeDate",   label:"Due Date",  icon:"⏰" },
+  { key:"followUp",    label:"Follow-up", icon:"↗" },
   { key:"score",       label:"Score",     icon:"★" },
   { key:"salary",      label:"Salary",    icon:"$" },
   { key:"appliedDate", label:"Applied",   icon:"✉" },
@@ -280,6 +281,17 @@ const daysSince = d => {
   const now = new Date();
   const today = Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
   return Math.max(0,Math.floor((today-Date.UTC(year,month-1,day))/(1000*60*60*24)));
+};
+
+// Follow-up ordering: explicitly flagged first, then oldest uncontacted applications,
+// then applications with no date, completed outreach, and finally non-applied jobs.
+const followUpSort = job => {
+  if(job.status!=="Applied") return 400000;
+  const age = daysSince(job.appliedDate);
+  if(job.followUpStatus==="needed") return -300000-(age||0);
+  if(job.followUpStatus==="sent") return 200000-(age||0);
+  if(age==null) return 100000;
+  return -age;
 };
 
 const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appliedDate:"",closeDate:"",status:"Saved",deadlineType:"not_published",linkType:"unverified",url:"",requirements:"",notes:"",tuitionNote:"",scores:null,scoreRationale:null};
@@ -1064,6 +1076,7 @@ export default function App() {
     if(sortKey==="score")       { av=overall(a.scores)??-1;                                  bv=overall(b.scores)??-1; }
     else if(sortKey==="salary") { av=salaryNum(a.salary)??-1;                                bv=salaryNum(b.salary)??-1; }
     else if(sortKey==="status") { av=STATUS_ORDER[a.status]??99;                             bv=STATUS_ORDER[b.status]??99; }
+    else if(sortKey==="followUp") { av=followUpSort(a);                                      bv=followUpSort(b); }
     // Only a verified employer date sorts as a deadline; every other state sorts last.
     else if(sortKey==="closeDate")   { av=dueSort(a);                                            bv=dueSort(b); }
     else if(sortKey==="appliedDate") { av=a.appliedDate?new Date(a.appliedDate).getTime():Infinity; bv=b.appliedDate?new Date(b.appliedDate).getTime():Infinity; }
