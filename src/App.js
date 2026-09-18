@@ -274,6 +274,7 @@ const overallBg    = p => !p?"#1e2535":p>=70?"#0f2e27":p>=45?"#2d220a":"#2d1010"
 
 const fmtDate   = d => { if(!d) return null; const[,m,day]=d.split("-"); return `${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+m-1]} ${+day}`; };
 const daysUntil = d => { if(!d) return null; return Math.ceil((new Date(d)-new Date())/(1000*60*60*24)); };
+const externalUrl = value => !value?"":/^https?:\/\//i.test(value)?value:`https://${value.replace(/^\/+/,"")}`;
 const daysSince = d => {
   if(!d) return null;
   const [year,month,day] = d.split("-").map(Number);
@@ -294,7 +295,7 @@ const followUpSort = job => {
   return -age;
 };
 
-const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appliedDate:"",closeDate:"",status:"Saved",deadlineType:"not_published",linkType:"unverified",url:"",requirements:"",notes:"",tuitionNote:"",scores:null,scoreRationale:null};
+const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appliedDate:"",closeDate:"",status:"Saved",deadlineType:"not_published",linkType:"unverified",url:"",requirements:"",notes:"",tuitionNote:"",recruiterName:"",recruiterEmail:"",recruiterLinkedIn:"",hiringManagerName:"",hiringManagerEmail:"",hiringManagerLinkedIn:"",scores:null,scoreRationale:null};
 
 const MASTER_RESUME = `ELOISA MELENDEZ
 Relocating to New York, NY | eloisam6@comcast.net | linkedin.com/in/eloisamelendez
@@ -591,6 +592,24 @@ const DimBar = ({label, icon, val, rationale}) => {
   );
 };
 
+const ContactCard = ({role,name,email,linkedin}) => {
+  const hasContact = name||email||linkedin;
+  return (
+    <div style={{background:"#0a1020",borderRadius:14,padding:"14px",border:"1px solid rgba(255,255,255,0.07)"}}>
+      <div style={{fontSize:10,color:"#4B9EFF",textTransform:"uppercase",letterSpacing:"0.1em",fontWeight:800,marginBottom:5}}>{role}</div>
+      <div style={{fontSize:15,color:hasContact?"#e2e8f0":"#64748b",fontWeight:700,marginBottom:10}}>{name||"Name not added"}</div>
+      <div style={{display:"flex",flexWrap:"wrap",gap:7}}>
+        {email
+          ? <a href={`mailto:${email}`} style={{background:"rgba(54,201,167,0.09)",border:"1px solid rgba(54,201,167,0.25)",color:"#36C9A7",borderRadius:9,padding:"7px 10px",fontSize:12,fontWeight:700,textDecoration:"none"}}>✉ Email</a>
+          : <span style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",color:"#475569",borderRadius:9,padding:"7px 10px",fontSize:12}}>No email</span>}
+        {linkedin
+          ? <a href={externalUrl(linkedin)} target="_blank" rel="noreferrer" style={{background:"rgba(75,158,255,0.09)",border:"1px solid rgba(75,158,255,0.25)",color:"#4B9EFF",borderRadius:9,padding:"7px 10px",fontSize:12,fontWeight:700,textDecoration:"none"}}>in LinkedIn</a>
+          : <span style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",color:"#475569",borderRadius:9,padding:"7px 10px",fontSize:12}}>No LinkedIn</span>}
+      </div>
+    </div>
+  );
+};
+
 // ── SHEET ────────────────────────────────────────────────────────────────────
 const Sheet = ({job, onEdit, onClose, onResume}) => {
   const [tab, setTab] = useState("overview");
@@ -637,7 +656,7 @@ const Sheet = ({job, onEdit, onClose, onResume}) => {
         </div>
 
         <div style={{display:"flex",padding:"14px 20px 0",gap:4,borderBottom:"1px solid rgba(255,255,255,0.06)"}}>
-          {["overview","scores","notes"].map(t=>(
+          {["overview","outreach","scores","notes"].map(t=>(
             <button key={t} onClick={()=>setTab(t)} style={{background:tab===t?"rgba(75,158,255,0.12)":"transparent",
               border:`1px solid ${tab===t?"rgba(75,158,255,0.3)":"transparent"}`,
               color:tab===t?"#4B9EFF":"#64748b",padding:"7px 14px 8px",cursor:"pointer",fontSize:13,
@@ -734,6 +753,20 @@ const Sheet = ({job, onEdit, onClose, onResume}) => {
             )}
           </div>}
 
+          {tab==="outreach"&&<div>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:12,marginBottom:12}}>
+              <div>
+                <div style={{fontSize:11,color:"#e2e8f0",textTransform:"uppercase",letterSpacing:"0.08em",fontWeight:800}}>Outreach Contacts</div>
+                <p style={{fontSize:12,color:"#64748b",lineHeight:1.5,margin:"5px 0 0"}}>Use Edit to add or update contact details for this application.</p>
+              </div>
+              <span style={{fontSize:20}}>🤝</span>
+            </div>
+            <div style={{display:"grid",gap:10}}>
+              <ContactCard role="Recruiter" name={job.recruiterName} email={job.recruiterEmail} linkedin={job.recruiterLinkedIn}/>
+              <ContactCard role="Hiring Manager" name={job.hiringManagerName} email={job.hiringManagerEmail} linkedin={job.hiringManagerLinkedIn}/>
+            </div>
+          </div>}
+
           {tab==="scores"&&<div>
             {job.scores
               ? DIMS.map(({key,label,icon})=><DimBar key={key} label={label} icon={icon} val={job.scores[key]} rationale={job.scoreRationale?.[key]}/>)
@@ -826,6 +859,30 @@ const EditModal = ({job, onClose, onSave, onDelete}) => {
             </div>
             <p style={{fontSize:12,color:"#94a3b8",margin:"8px 0 0"}}>Keep track of your next conversation. Save Changes to update the badge.</p>
           </div>}
+          <div>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
+              <label style={{...lbl,marginBottom:0}}>Outreach Contacts</label>
+              <span style={{fontSize:11,color:"#475569"}}>Optional</span>
+            </div>
+            <div style={{display:"grid",gap:10}}>
+              <div style={{background:"#0a1020",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:12}}>
+                <div style={{fontSize:11,color:"#4B9EFF",fontWeight:800,marginBottom:9}}>Recruiter</div>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:8}}>
+                  <input aria-label="Recruiter name" placeholder="Name" style={inp} value={form.recruiterName||""} onChange={e=>set("recruiterName",e.target.value)}/>
+                  <input aria-label="Recruiter email" placeholder="Email" type="email" style={inp} value={form.recruiterEmail||""} onChange={e=>set("recruiterEmail",e.target.value)}/>
+                </div>
+                <input aria-label="Recruiter LinkedIn" placeholder="LinkedIn profile URL" type="url" style={inp} value={form.recruiterLinkedIn||""} onChange={e=>set("recruiterLinkedIn",e.target.value)}/>
+              </div>
+              <div style={{background:"#0a1020",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:12}}>
+                <div style={{fontSize:11,color:"#4B9EFF",fontWeight:800,marginBottom:9}}>Hiring Manager</div>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:8}}>
+                  <input aria-label="Hiring manager name" placeholder="Name" style={inp} value={form.hiringManagerName||""} onChange={e=>set("hiringManagerName",e.target.value)}/>
+                  <input aria-label="Hiring manager email" placeholder="Email" type="email" style={inp} value={form.hiringManagerEmail||""} onChange={e=>set("hiringManagerEmail",e.target.value)}/>
+                </div>
+                <input aria-label="Hiring manager LinkedIn" placeholder="LinkedIn profile URL" type="url" style={inp} value={form.hiringManagerLinkedIn||""} onChange={e=>set("hiringManagerLinkedIn",e.target.value)}/>
+              </div>
+            </div>
+          </div>
           <div><label style={lbl}>Location</label><input style={inp} value={form.location} onChange={e=>set("location",e.target.value)}/></div>
           <div><label style={lbl}>Salary</label><input style={inp} value={form.salary} onChange={e=>set("salary",e.target.value)}/></div>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
