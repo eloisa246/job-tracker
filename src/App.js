@@ -273,6 +273,14 @@ const overallBg    = p => !p?"#1e2535":p>=70?"#0f2e27":p>=45?"#2d220a":"#2d1010"
 
 const fmtDate   = d => { if(!d) return null; const[,m,day]=d.split("-"); return `${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+m-1]} ${+day}`; };
 const daysUntil = d => { if(!d) return null; return Math.ceil((new Date(d)-new Date())/(1000*60*60*24)); };
+const daysSince = d => {
+  if(!d) return null;
+  const [year,month,day] = d.split("-").map(Number);
+  if(!year||!month||!day) return null;
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());
+  return Math.max(0,Math.floor((today-Date.UTC(year,month-1,day))/(1000*60*60*24)));
+};
 
 const EMPTY = {id:null,title:"",org:"",location:"",salary:"",postedDate:"",appliedDate:"",closeDate:"",status:"Saved",deadlineType:"not_published",linkType:"unverified",url:"",requirements:"",notes:"",tuitionNote:"",scores:null,scoreRationale:null};
 
@@ -740,6 +748,15 @@ const FOLLOW_UP = {
   sent: {label:"Reached out", icon:"✓", color:"#36C9A7", bg:"rgba(54,201,167,0.10)"},
 };
 
+const applicationUrgency = appliedDate => {
+  const age = daysSince(appliedDate);
+  if(age==null) return {label:"Set follow-up", icon:"○", color:"#94a3b8", bg:"rgba(148,163,184,0.08)", age};
+  if(age<=3) return {label:`Fresh · ${age}d`, icon:"○", color:"#7DD3FC", bg:"rgba(125,211,252,0.10)", age};
+  if(age<=7) return {label:`Soon · ${age}d`, icon:"◷", color:"#F9B233", bg:"rgba(249,178,51,0.10)", age};
+  if(age<=14) return {label:`Due · ${age}d`, icon:"↗", color:"#FB923C", bg:"rgba(251,146,60,0.11)", age};
+  return {label:`Overdue · ${age}d`, icon:"!", color:"#FF7B72", bg:"rgba(255,123,114,0.11)", age};
+};
+
 const EditModal = ({job, onClose, onSave, onDelete}) => {
   const [form, setForm] = useState(job);
   const isNew = !job.id;
@@ -870,14 +887,16 @@ const Card = ({job, onTap, onFollowUp}) => {
             <span style={{fontSize:10}}>{sc.emoji}</span>{job.status.toUpperCase()}
           </span>
           {job.status==="Applied"&&(()=>{
-            const followUp=FOLLOW_UP[job.followUpStatus]||FOLLOW_UP.none;
+            const automatic=applicationUrgency(job.appliedDate);
+            const followUp=job.followUpStatus&&job.followUpStatus!=="none"?FOLLOW_UP[job.followUpStatus]:automatic;
             return <button type="button" onClick={e=>{e.stopPropagation();onFollowUp();}}
               aria-label={`Edit follow-up for ${job.title}: ${followUp.label}`}
-              style={{fontFamily:"inherit",fontSize:11,fontWeight:600,color:followUp.color,
+              title={automatic.age==null?"Set a follow-up status":`${automatic.age} day${automatic.age===1?"":"s"} since applying`}
+              style={{fontFamily:"inherit",fontSize:10,fontWeight:700,color:followUp.color,
                 background:followUp.bg,border:`1px solid ${followUp.color}55`,borderRadius:20,
-                minHeight:44,padding:"8px 11px",cursor:"pointer",display:"flex",alignItems:"center",gap:5}}>
-              <span aria-hidden="true">{followUp.icon}</span>{job.followUpStatus==="needed"||job.followUpStatus==="sent"?followUp.label:"Mark follow-up"}
-              <span aria-hidden="true" style={{opacity:0.6}}>⌄</span>
+                minHeight:24,padding:"2px 9px",cursor:"pointer",display:"inline-flex",alignItems:"center",gap:4,
+                letterSpacing:"0.02em",lineHeight:1.2,whiteSpace:"nowrap"}}>
+              <span aria-hidden="true" style={{fontSize:10}}>{followUp.icon}</span>{followUp.label}
             </button>;
           })()}
           {urgent&&(
