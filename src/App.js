@@ -734,6 +734,12 @@ const Sheet = ({job, onEdit, onClose, onResume}) => {
 };
 
 // ── EDIT MODAL ───────────────────────────────────────────────────────────────
+const FOLLOW_UP = {
+  none: {label:"Not marked", icon:"○", color:"#94a3b8", bg:"rgba(148,163,184,0.08)"},
+  needed: {label:"Need to reach out", icon:"↗", color:"#F9B233", bg:"rgba(249,178,51,0.10)"},
+  sent: {label:"Reached out", icon:"✓", color:"#36C9A7", bg:"rgba(54,201,167,0.10)"},
+};
+
 const EditModal = ({job, onClose, onSave, onDelete}) => {
   const [form, setForm] = useState(job);
   const isNew = !job.id;
@@ -776,6 +782,21 @@ const EditModal = ({job, onClose, onSave, onDelete}) => {
               })}
             </div>
           </div>
+          {form.status==="Applied"&&<div>
+            <label style={lbl}>Follow-up</label>
+            <div role="group" aria-label="Follow-up status" style={{display:"flex",flexWrap:"wrap",gap:8}}>
+              {Object.entries(FOLLOW_UP).map(([value,option])=><button key={value} type="button"
+                aria-pressed={(form.followUpStatus||"none")===value}
+                onClick={()=>set("followUpStatus",value)} style={{
+                  minHeight:44,padding:"10px 13px",borderRadius:20,fontFamily:"inherit",fontSize:12,
+                  cursor:"pointer",fontWeight:600,color:option.color,
+                  background:(form.followUpStatus||"none")===value?option.bg:"transparent",
+                  border:`1px solid ${(form.followUpStatus||"none")===value?option.color:"rgba(255,255,255,0.10)"}`}}>
+                {option.icon} {option.label}
+              </button>)}
+            </div>
+            <p style={{fontSize:12,color:"#94a3b8",margin:"8px 0 0"}}>Keep track of your next conversation. Save Changes to update the badge.</p>
+          </div>}
           <div><label style={lbl}>Location</label><input style={inp} value={form.location} onChange={e=>set("location",e.target.value)}/></div>
           <div><label style={lbl}>Salary</label><input style={inp} value={form.salary} onChange={e=>set("salary",e.target.value)}/></div>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10}}>
@@ -822,7 +843,7 @@ const EditModal = ({job, onClose, onSave, onDelete}) => {
 };
 
 // ── CARD ─────────────────────────────────────────────────────────────────────
-const Card = ({job, onTap}) => {
+const Card = ({job, onTap, onFollowUp}) => {
   const ov = overall(job.scores);
   const sc = STATUS_CONFIG[job.status];
   const days = daysUntil(job.closeDate);
@@ -848,6 +869,17 @@ const Card = ({job, onTap}) => {
             display:"flex",alignItems:"center",gap:4}}>
             <span style={{fontSize:10}}>{sc.emoji}</span>{job.status.toUpperCase()}
           </span>
+          {job.status==="Applied"&&(()=>{
+            const followUp=FOLLOW_UP[job.followUpStatus]||FOLLOW_UP.none;
+            return <button type="button" onClick={e=>{e.stopPropagation();onFollowUp();}}
+              aria-label={`Edit follow-up for ${job.title}: ${followUp.label}`}
+              style={{fontFamily:"inherit",fontSize:11,fontWeight:600,color:followUp.color,
+                background:followUp.bg,border:`1px solid ${followUp.color}55`,borderRadius:20,
+                minHeight:44,padding:"8px 11px",cursor:"pointer",display:"flex",alignItems:"center",gap:5}}>
+              <span aria-hidden="true">{followUp.icon}</span>{job.followUpStatus==="needed"||job.followUpStatus==="sent"?followUp.label:"Mark follow-up"}
+              <span aria-hidden="true" style={{opacity:0.6}}>⌄</span>
+            </button>;
+          })()}
           {urgent&&(
             <span style={{fontSize:10,fontWeight:700,
               color:critical?"#FF7B72":"#F9B233",
@@ -1136,7 +1168,7 @@ export default function App() {
                 <div style={{fontSize:36,marginBottom:12,opacity:0.2}}>🗂</div>
                 <p style={{color:"#475569",fontSize:13,margin:0}}>{jobs.length===0?"Drop a job posting in chat — I'll add it here":"No matches found"}</p>
               </div>
-            : filtered.map(job=><Card key={job.id} job={job} onTap={()=>setSheet(job)}/>)
+            : filtered.map(job=><Card key={job.id} job={job} onTap={()=>setSheet(job)} onFollowUp={()=>setEditModal(job)}/>)
         }
       </div>
 
