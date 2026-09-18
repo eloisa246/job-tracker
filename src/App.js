@@ -310,6 +310,21 @@ const OUTREACH_CONTACTS = {
     hiringManagerName:"Andrea Foley-Murphy",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/andrea-foley-murphy-673062227",
   },
+  "1700000032000": {
+    recruiterName:"Lina Hurston",
+    recruiterEmail:"hurstona@nychhc.org",
+    recruiterLinkedIn:"https://www.linkedin.com/in/lina-hurston-mshrm-phr",
+  },
+  "1700000036000": {
+    recruiterName:"HPD Owner Services (official inbox)",
+    recruiterEmail:"s8landlords@hpd.nyc.gov",
+    hiringManagerName:"Andrea Foley-Murphy",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/andrea-foley-murphy-673062227",
+  },
+  "1700000037000": {
+    recruiterName:"Public Health Solutions Careers",
+    recruiterLinkedIn:"https://www.linkedin.com/company/public-health-solutions",
+  },
   "1700000039000": {
     recruiterName:"DYCD Contract Development Unit",
     recruiterEmail:"cdu@dycd.nyc.gov",
@@ -325,6 +340,22 @@ const OUTREACH_CONTACTS = {
     recruiterLinkedIn:"https://www.linkedin.com/in/laurensiegel23",
     hiringManagerName:"Damond Stubbs",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/damondstubbs",
+  },
+  "1700000064000": {
+    recruiterName:"OCME Careers",
+    recruiterLinkedIn:"https://www.linkedin.com/company/nyc-office-of-chief-medical-examiner",
+    hiringManagerName:"Dr. Terra A. Cederroth",
+  },
+  "1700000065000": {
+    recruiterName:"Violet Bube",
+    recruiterEmail:"violet.bube@slu.cuny.edu",
+    hiringManagerName:"Joanne Mason",
+    hiringManagerEmail:"joanne.mason@slu.cuny.edu",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/joanne-mason-1879058b",
+  },
+  "1700000069000": {
+    hiringManagerName:"Rachel Zeig-Owens",
+    hiringManagerLinkedIn:"https://www.linkedin.com/in/rachel-zeig-owens-4bb72a9",
   },
   "1700000071000": {
     recruiterName:"Citymeals Careers",
