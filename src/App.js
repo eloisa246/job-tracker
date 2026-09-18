@@ -332,7 +332,7 @@ const OUTREACH_CONTACTS = {
     recruiterLinkedIn:"https://www.linkedin.com/in/violet-bube-msilr-sphr",
     recruiterNote:"SLU Human Resources routing contact; not confirmed as the recruiter assigned to this opening.",
     hiringManagerName:"Joanne Mason",
-    hiringManagerTitle:"Associate Director of Worker Education",
+    hiringManagerTitle:"Associate Director of Worker Education and Workforce Development",
     hiringManagerEmail:"joanne.mason@slu.cuny.edu",
     hiringManagerLinkedIn:"https://www.linkedin.com/in/joanne-mason-1879058b",
     hiringManagerNote:"Exact match: the posting says this role reports to the Associate Director of Worker Education and Workforce Development.",
