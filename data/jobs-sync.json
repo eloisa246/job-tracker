@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-15T02:07:15.453Z",
+  "updatedAt": "2026-09-20T23:06:30.332Z",
   "jobs": {
     "1700000039000": {
       "id": 1700000039000,
@@ -859,6 +859,40 @@
       "tuitionNote": "",
       "scores": null,
       "scoreRationale": null
+    },
+    "1700000092000": {
+      "id": 1700000092000,
+      "title": "Data Analyst for the Division of Housing Opportunity",
+      "org": "NYC Department of Housing Preservation & Development (HPD)",
+      "location": "100 Gold Street, Manhattan",
+      "salary": "$62,868-$72,298",
+      "postedDate": "2026-09-16",
+      "appliedDate": "2026-09-20",
+      "status": "Applied",
+      "linkType": "direct_employer",
+      "deadlineType": "date",
+      "track": "permanent",
+      "url": "https://cityjobs.nyc.gov/job/data-analyst-for-the-division-of-housing-opportunity-in-nyc-all-boros-jid-47495",
+      "closeDate": "2026-10-16",
+      "requirements": "Support data management, reporting, performance metrics, data quality, and project intake for HPD Homeless Placement Services. Maintain tracking systems and databases; generate and analyze reports; identify trends, discrepancies, and opportunities for process improvement; coordinate with managing agents and internal teams. Job ID 800972. Civil service title: Community Coordinator. Bachelor's degree plus two years of related community work, or an equivalent combination.",
+      "notes": "Applied through NYC SmartRecruiters on September 20, 2026 with a tailored one-page resume, cover letter, and hiring-team message. Documents used the posting's exact supported ATS language for reports and performance metrics, tracking systems and databases, data accuracy and integrity, data quality troubleshooting, and process improvement. No unsupported Access or SharePoint proficiency was claimed.",
+      "tuitionNote": "NYC agency, likely DC37-represented. PSLF-qualifying; verify title-specific tuition reimbursement.",
+      "scores": {
+        "qualification": 9,
+        "enjoyment": 9,
+        "school": 6,
+        "location": 8,
+        "mph": 8,
+        "mission": 9
+      },
+      "scoreRationale": {
+        "qualification": "Direct match for housing-program databases, Excel reporting, performance metrics, data quality, documentation, process improvement, and coordination with public agencies and property managers.",
+        "enjoyment": "Predominantly back-end data, reporting, systems, and process work with no direct-service caseload or staff supervision.",
+        "school": "Full-time City role with no evening or weekend requirement stated; hybrid eligibility was not promised in the posting.",
+        "location": "100 Gold Street is a manageable downtown Manhattan commute from Brooklyn.",
+        "mph": "Homeless placement data and housing access are closely connected to social determinants of health and public-program evaluation.",
+        "mission": "HPD's work expands fair and transparent access to affordable housing for New Yorkers leaving shelter."
+      }
     }
   },
   "deletedIds": []
