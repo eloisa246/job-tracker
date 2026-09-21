@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-20T23:06:30.332Z",
+  "updatedAt": "2026-09-21T00:35:30.789Z",
   "jobs": {
     "1700000039000": {
       "id": 1700000039000,
@@ -893,8 +893,33 @@
         "mph": "Homeless placement data and housing access are closely connected to social determinants of health and public-program evaluation.",
         "mission": "HPD's work expands fair and transparent access to affordable housing for New Yorkers leaving shelter."
       }
+    },
+    "1700000093000": {
+      "id": 1700000093000,
+      "title": "Manager, Benefits Navigation, Health Equity (Fixed Term)",
+      "org": "United Way of New York City (UWNYC)",
+      "location": "New York, NY - hybrid, in office Tuesday through Thursday, remote Monday and Friday; regular travel across all five boroughs",
+      "salary": "$65,000-$80,000",
+      "postedDate": "2026-09-17",
+      "appliedDate": "",
+      "status": "Saved",
+      "linkType": "employer_portal",
+      "deadlineType": "not_published",
+      "url": "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=f05554b5-e498-4eee-be2d-2357eab87e19&ccId=19000101_000001&lang=en_US&jobId=711418",
+      "closeDate": "",
+      "requirements": "Requisition ID 1101. Reports to the Director, 1115 Medicaid Waiver Initiative, Health Equity. Supports a portfolio of community-based organizations in the SOMOS Community Care Social Care Network under New York State's 1115 Medicaid Waiver, plus partners in UWNYC's Community Benefits Resiliency Network.\n\nSkills, knowledge and experience required:\n- Bachelor's degree in public health, public administration, social work, or a related field with a minimum of 3 years of relevant work experience in community-based health, human services, or public sector programs; OR a master's degree with a minimum of 2 years. Five years preferred.\n- Benefits navigation, Medicaid and/or SNAP enrollment, recertification, or certified application counselor workflows strongly preferred.\n- Experience delivering hands-on training and technical assistance to community-based organizations or frontline staff.\n- Ability to translate complex policy changes into actionable guidance for frontline teams.\n- Experience integrating benefits navigation into existing programs, case management systems, or referral platforms.\n- Microsoft Office proficiency; FindHelp or UniteUs experience a plus.\n- Willingness to travel regularly across the five boroughs for on-site training and partner engagement.\n\nWork: organizational assessments, train-the-trainer curricula, 1:1 coaching, site visits, office hours, small-group trainings, peer learning communities of practice, billing readiness workshops, and workflow standardization for SDOH screening, closed-loop referral management, and Medicaid reimbursement readiness.",
+      "notes": "Found 9/20/26 in the browser while reviewing the UWNYC careers board. STRONGEST FULL-TIME MATCH IN THE PIPELINE on subject-matter fit.\n\nWHY: she spent three years at United Way of King County, so this is the same federated network and operating model. The posting asks for hands-on training and technical assistance to CBOs delivered through coaching, site visits, and office hours; her UWKC bullet reads 'built training and technical assistance infrastructure (job aids, office hours, troubleshooting).' It asks for a CBO portfolio; she managed partnerships across 6 CBOs and 45 case managers. It asks for benefits eligibility, enrollment, and recertification; she processed 20+ eviction prevention applications per week and $8M in assistance. No conferred master's gate, unlike the DOHMH City Research Scientist ladder.\n\nTERM CAVEAT: grant funded through March 31, 2027. From a realistic November start that is roughly five months of work, not a permanent seat. Treat as a parallel application, not a replacement for the permanent city roles. ASK AT SCREENING whether the term is extendable or intended to convert; do not raise the end date in the cover letter.\n\nSCHEDULE CONFLICT TO RESOLVE: in office Tuesday through Thursday, and fall classes meet Tuesday and Thursday late afternoon at CUNY SPH. She would need to leave early twice a week every week. The posting lists tuition assistance as a benefit, which suggests they accommodate students, but confirm before accepting.\n\nTITLE IS MISLEADING IN HER FAVOR: no direct reports appear anywhere in the posting. Manager refers to managing a partner portfolio, not staff, which is the United Way work she liked rather than the supervision she avoids.\n\nApply through the UWNYC career page. No phone calls or faxes.",
+      "tuitionNote": "UWNYC lists tuition assistance among its benefits. Confirm whether it covers the MPH and whether fixed-term staff are eligible.",
+      "scores": { "qualification": 9, "enjoyment": 8, "school": 6, "location": 7, "mph": 9, "mission": 9 },
+      "scoreRationale": {
+        "qualification": "Clears the bachelor's-plus-three-years route with five years, and the preferred qualifications read like her United Way job description. The CBO technical assistance experience is a direct match rather than an adjacent one.",
+        "enjoyment": "Training, technical assistance, and partner portfolio management with no direct reports is the shape of work she rates highest; the five-borough travel and site visits are the one part that cuts against her preference for desk-based work.",
+        "school": "In-office Tuesday through Thursday collides with Tuesday and Thursday classes, requiring an early departure twice weekly; tuition assistance partially offsets this.",
+        "location": "Hybrid Manhattan with two remote days, but regular travel across all five boroughs.",
+        "mph": "Health equity, social determinants of health screening, and 1115 Medicaid Waiver implementation is the most directly MPH-building role in the entire tracker.",
+        "mission": "United Way of New York City working to prevent avoidable Medicaid and SNAP coverage loss for vulnerable New Yorkers."
+      }
     }
   },
   "deletedIds": []
 }
-
