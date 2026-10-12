@@ -3647,6 +3647,58 @@
       "hiringManagerNote": "",
       "scores": null,
       "scoreRationale": null
+    },
+    "1700000106000": {
+      "id": 1700000106000,
+      "title": "Graduate Assistant Coordinator (HR Coordinator)",
+      "org": "CUNY Graduate Center - Office of Human Resources",
+      "location": "New York, NY - 365 Fifth Avenue, Manhattan (80% in person)",
+      "salary": "$61,525-$65,208",
+      "postedDate": "",
+      "appliedDate": "",
+      "status": "Saved",
+      "linkType": "direct_employer",
+      "deadlineType": "date",
+      "url": "https://rr.jobsyn.org/60B5B000F61A4A3183D73ADBDF99C40A10",
+      "closeDate": "2026-10-28",
+      "requirements": "CUNY Job ID 32901, contract title Assistant to HEO, non-exempt. Manages appointments and reappointments for 1,300+ Graduate Assistants: personnel transactions in CUNYfirst/HCM, PayServ salary discrepancies, orientations, mass reappointment offer letters, personnel files, Personnel Action Reports, compliance with the PSC/CUNY collective bargaining agreement.\n\nMinimum qualification: bachelor's degree.\nPreferred: prior CUNY experience; discretion with employee information; knowledge of collective bargaining agreements; CUNYfirst/HCM and PayServ experience; presentation experience; strong organization and communication.",
+      "notes": "Added 10/12/26 at the applicant's request (lowered bar). QUALIFICATION CONFIRMED - bachelor's is the only requirement, though most preferred items are CUNY-HR-specific systems she has not used. Main draw is the likely CUNY tuition waiver for a full-time staff role; the GC's HR office also serves CUNY SPH. Pay is at the low end of her range. 80% in-person; leaving 34th Street for a 4pm Harlem class is doable. Submit resume and cover letter.",
+      "tuitionNote": "Full-time CUNY staff role - CUNY tuition waiver likely applies; confirm for the MPH at CUNY SPH.",
+      "scores": { "qualification": 7, "enjoyment": 6, "school": 8, "location": 8, "mph": 3, "mission": 6 },
+      "scoreRationale": {
+        "qualification": "Clears the bachelor's minimum; competitive on records, confidentiality, and presenting, but lacks the preferred CUNY HR systems and union-contract experience.",
+        "enjoyment": "Records, data accuracy, and transaction processing suit her, but it is HR rather than her field and involves heavy inquiry handling for 1,300 employees.",
+        "school": "Full-time CUNY role with likely tuition waiver, at the office that also serves CUNY SPH.",
+        "location": "365 Fifth Avenue, about 30 minutes on the M train from Bushwick.",
+        "mph": "HR administration builds little toward public health.",
+        "mission": "Supporting CUNY graduate students, including at her own school."
+      }
+    },
+    "1700000107000": {
+      "id": 1700000107000,
+      "title": "Administrative Assistant 1 / Administrative Assistant Trainee (NY HELPS), Litigation Bureau",
+      "org": "NYS Office of the Attorney General",
+      "location": "New York, NY - 28 Liberty Street, Manhattan (fully in office)",
+      "salary": "$42,209-$61,076 (AA1 starts at $49,695)",
+      "postedDate": "2026-10-07",
+      "appliedDate": "",
+      "status": "Saved",
+      "linkType": "direct_employer",
+      "deadlineType": "date",
+      "url": "https://statejobs.ny.gov/public/vacancyDetailsView.cfm?id=226585",
+      "closeDate": "2026-10-18",
+      "requirements": "StateJobsNY vacancy 226585. Litigation Bureau Administrative Support Unit: logging service of legal papers in NYMatters, distributing papers to attorneys, processing purchase and travel requests and court reporter invoices, Excel tracking, court docket research (NYSCEF, eCourts, PACER), copying, scanning, redaction, tables of contents and authorities, proofreading, scheduling depositions, backup phone coverage.\n\nNY HELPS non-competitive appointment, no exam. AA1: two years of administrative support experience (office software, customer service, business writing, office administration). Mon-Fri 8:30-5; no flextime, telecommuting, or compressed workweek.",
+      "notes": "Added 10/12/26 at the applicant's request (lowered bar). APPLICATIONS DUE 10/18/26. QUALIFICATION CONFIRMED - overqualified. SCHEDULE CONFLICT: fixed 8:30-5 Monday to Friday with no flextime, which collides with Tuesday and Thursday 4pm classes at CUNY SPH; would need to be raised before accepting. PAY: AA1 starting salary is $49,695; the $61,076 figure is the top of the scale, not the starting rate. State job with NY HELPS conversion to competitive status within a year.",
+      "tuitionNote": "",
+      "scores": { "qualification": 9, "enjoyment": 4, "school": 3, "location": 8, "mph": 2, "mission": 5 },
+      "scoreRationale": {
+        "qualification": "Two years of admin support is the bar; she has far more.",
+        "enjoyment": "Junior clerical legal support - logging, docketing, copying, phones - a step down from program supervision.",
+        "school": "Fixed in-office 8:30-5 with no flextime collides with 4pm Tuesday and Thursday classes.",
+        "location": "28 Liberty Street, downtown Manhattan.",
+        "mph": "No public health connection.",
+        "mission": "Administrative support for state attorneys in litigation."
+      }
     }
   },
   "deletedIds": []
