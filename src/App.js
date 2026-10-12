@@ -1238,8 +1238,32 @@ const Card = ({job, onTap, onFollowUp}) => {
 };
 
 // ── APP ───────────────────────────────────────────────────────────────────────
+// A deadline remains open throughout its date in New York. Only unsubmitted,
+// saved jobs with an actual employer closing date can expire automatically.
+function trackerToday(now = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone:"America/New_York", year:"numeric", month:"2-digit", day:"2-digit",
+  }).formatToParts(now);
+  const value = type => parts.find(part => part.type === type).value;
+  return `${value("year")}-${value("month")}-${value("day")}`;
+}
+
+function expireSavedJobs(jobs, today) {
+  return jobs.map(job => {
+    const deadline = job.closeDate;
+    if(job.status !== "Saved" || job.appliedDate || job.deadlineType !== "date" ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(deadline || "")) return job;
+    const parsed = new Date(`${deadline}T00:00:00Z`);
+    if(!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0,10) !== deadline ||
+      deadline >= today) return job;
+    return {...job,status:"Expired"};
+  });
+}
+
 export default function App() {
-  const [jobs, setJobs]           = useState([]);
+  const [storedJobs, setJobs]     = useState([]);
+  const [today, setToday]         = useState(trackerToday);
+  const jobs = expireSavedJobs(storedJobs, today);
   const [loading, setLoading]     = useState(true);
   const [sheet, setSheet]         = useState(null);
   const [editModal, setEditModal] = useState(null);
@@ -1250,6 +1274,28 @@ export default function App() {
   const [sortDir, setSortDir]     = useState("asc");
   const [syncDoc, setSyncDoc]     = useState(emptySync());
   const [syncState, setSyncState] = useState("loading");
+
+  useEffect(()=>{
+    if(loading) return;
+    const expired = expireSavedJobs(storedJobs,today);
+    if(!expired.some((job,index)=>job !== storedJobs[index])) return;
+    setJobs(expired);
+    // This date-based housekeeping must not claim that this device has newer
+    // user edits or upload a whole snapshot over jobs added on another device.
+    try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(expired)); }catch{}
+  },[storedJobs,today,loading]);
+
+  useEffect(()=>{
+    const refreshDate = () => setToday(trackerToday());
+    const timer = window.setInterval(refreshDate,60000);
+    window.addEventListener("focus",refreshDate);
+    document.addEventListener("visibilitychange",refreshDate);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener("focus",refreshDate);
+      document.removeEventListener("visibilitychange",refreshDate);
+    };
+  },[]);
 
   useEffect(()=>{
     (async()=>{
@@ -1480,3 +1526,4 @@ export default function App() {
     </div>
   );
 }
+
